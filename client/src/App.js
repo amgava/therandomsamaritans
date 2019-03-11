@@ -1,21 +1,22 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import Login from "./pages/Loggedin/Loggedin";
+import Signup from "./pages/Loggedin/Userok";
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+function App() {
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;

@@ -1,0 +1,17 @@
+  ul.App-navbar {
+    margin: 25px;
+    margin-left: 5px;
+    margin-right: 25px;
+    position: sticky;
+    padding: 15px;
+  }
+
+  li.menuLink {
+    list-style-type: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 15px;
+    text-align: center;
+    font-size: calc(14px + 2vmin);
+    text-align: justify;
+  }
