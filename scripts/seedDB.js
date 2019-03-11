@@ -8,45 +8,21 @@ mongoose.connect(
 
 const userSeed = [
   {
-    userId: "Stephen",
+    userId: "Stephen 1",
     firstName: "King",
     lastName: "link.address",
     email: "email.address",
     date: new Date(Date.now())
   },
   {
-    userId: "Stephen",
+    userId: "Stephen 2",
     firstName: "King",
     lastName: "link.address",
     email: "email.address",
     date: new Date(Date.now())
   },
   {
-    userId: "Stephen",
-    firstName: "King",
-    lastName: "link.address",
-    email: "email.address",
-    date: new Date(Date.now())
-  }
-];
-
-const userSeed = [
-  {
-    userId: "Stephen",
-    firstName: "King",
-    lastName: "link.address",
-    email: "email.address",
-    date: new Date(Date.now())
-  },
-  {
-    userId: "Stephen",
-    firstName: "King",
-    lastName: "link.address",
-    email: "email.address",
-    date: new Date(Date.now())
-  },
-  {
-    userId: "Stephen",
+    userId: "Stephen 3",
     firstName: "King",
     lastName: "link.address",
     email: "email.address",
@@ -59,21 +35,21 @@ const postSeed = [
     title: "My Post",
     author: "Stephen King",
     link: "link.address",
-    postContent: "email.address",
+    postContent: "This is some demo post content 1",
     date: new Date(Date.now())
   },
   {
     title: "My Post",
     author: "Stephen King",
     link: "link.address",
-    postContent: "email.address",
+    postContent: "This is some demo post content 2",
     date: new Date(Date.now())
   },
   {
     title: "My Post",
     author: "Stephen King",
     link: "link.address",
-    postContent: "email.address",
+    postContent: "This is some demo post content 3",
     date: new Date(Date.now())
   }
 ];
