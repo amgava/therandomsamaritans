@@ -2,4 +2,10 @@
 text-align: center;
 font-size: 25px;
 min-height: 10vh;
+margin-top: 45px;
+position: sticky;
+border: 2px;
+border-color: black;
+background-color: green;
+line-height: 80px;
 }

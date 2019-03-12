@@ -1,14 +1,15 @@
 import React from 'react';
 import Footer from "../../components/Footer/Footer";
 
-function Login() {
+
+function Contact() {
     return (
         <div className="App-body">
-            <h1 className="siteTitle">Please Login</h1>
-            <p>This will have a form soon</p>
+        <h1 className="siteTitle">Contact Us</h1>
+            This will be our contact information
             <Footer />
         </div>
     );
 }
 
-export default Login;
+export default Contact;
