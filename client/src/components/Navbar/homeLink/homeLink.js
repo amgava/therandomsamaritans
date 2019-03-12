@@ -4,8 +4,8 @@ import "../Navbar.css";
 
 function homeLink() {
     return (
-        <li className="nav-item menuLink">
-        <Link to={'/'} className="menuLink">your.market</Link>
+        <li className="App-logo">
+        <Link to={'/'} className="logo"><img className="logo" alt="homelink" src={require('./logo.png')} /></Link>
         </li>
     );
 }

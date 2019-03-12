@@ -21,6 +21,12 @@
     font-size: calc(8px + 2vmin);
   }
 
+  img.logo {
+    width: 50px;
+  }
+  
+  A:hover.logo { text-decoration: none; }
+
   A.menuLink { color: white }
 
   A:link.menuLink { text-decoration: none; padding: 15px;}

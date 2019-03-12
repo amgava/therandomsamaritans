@@ -1,0 +1,21 @@
+.hideMe {
+    display: none;
+}
+
+.signupSpacer {
+    width: 80%;
+    margin: auto;
+}
+
+.contactBody {
+    background-color: lightblue;
+    min-height: 60vh;
+    font-size: calc(5px + 2vmin);
+    color: black;
+    padding: 15px;
+    margin: 0px;
+  }
+
+#contact-form {
+padding: 50px;
+}
