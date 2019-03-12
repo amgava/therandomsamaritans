@@ -16,13 +16,13 @@ export default class Home extends Component {
             currentPage: "login",
             userCheck: {}
         };
-        this.togglePageState = this.togglePageState.bind(this);
+        this.togglepagestate = this.togglepagestate.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleNewUserFormSubmit = this.handleNewUserFormSubmit.bind(this);
         this.handleLoginFormSubmit = this.handleLoginFormSubmit.bind(this);
     }
 
-    togglePageState = () => {
+    togglepagestate = () => {
         console.log("hello ", this.state.currentPage);
         if (this.state.currentPage === "login") {
             this.setState({ currentPage: "signup" })
@@ -79,10 +79,11 @@ export default class Home extends Component {
     };
 
     renderPage = () => {
+        console.log(this.state);
         if (this.state.currentPage === "signup") {
             return (
                 <div className="App-body">
-                    <Hometop onClick={() => this.togglePageState()} />
+                    <Hometop togglepagestate={this.togglepagestate} />
                     <Loginform
                         email={this.state.email}
                         password={this.state.password}
@@ -94,7 +95,7 @@ export default class Home extends Component {
         } else {
             return (
                 <div className="App-body">
-                    <Hometop onClick={() => this.togglePageState()} />
+                    <Hometop togglepagestate={this.togglepagestate} />
                     <Newuserform
                         firstname={this.state.firstname}
                         lastname={this.state.lastname}
