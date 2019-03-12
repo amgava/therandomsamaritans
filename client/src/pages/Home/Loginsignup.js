@@ -26,7 +26,6 @@ class Loginsignup extends Component {
     };
 
     submitNewUser = (newuser) => {
-        console.log("I'm the Search: " + bookquery);
         API.createUser(newuser)
             .then(res => this.setState({ newuser: {} }))
             .catch(err => console.log(err));
