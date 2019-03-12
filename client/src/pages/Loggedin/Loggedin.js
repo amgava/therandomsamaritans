@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./Login";
 import Userok from "./Userok";
 import Makepost from "./Makepost";
 import Searchpost from "./Searchpost";
@@ -8,13 +9,15 @@ import Footer from "../../components/Footer/Footer";
 function Loggedin() {
     return (
         <Router>
-            <div className="wrapper">
+            <div className="App-body">
+                {/* Login Form */}
+                <Route exact={true} path="/login" component={Login} />
+                {/* Login Landing Page */}
+                <Route exact={true} path="/login/userok" component={Userok} />
                 {/* Make Post Page */}
-                <Route exact={true} path="/userok" component={Userok} />
-                {/* Make Post Page */}
-                <Route exact={true} path="/makepost" component={Makepost} />
+                <Route exact={true} path="/login/makepost" component={Makepost} />
                 {/* Search Posts Page */}
-                <Route exact={true} path="/searchpost" component={Searchpost} />
+                <Route exact={true} path="/login/searchpost" component={Searchpost} />
                 <Footer />
             </div>
         </Router>
