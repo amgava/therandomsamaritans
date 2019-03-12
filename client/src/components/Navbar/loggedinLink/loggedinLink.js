@@ -5,7 +5,7 @@ import "../Navbar.css";
 function loggedinLink() {
     return (
         <li className="nav-item menuLink">
-        <Link to={'/Loggedin'} className="menuLink"><strong>Login</strong></Link>
+        <Link to={'/login'} className="menuLink"><strong>Login</strong></Link>
         </li>
     );
 }

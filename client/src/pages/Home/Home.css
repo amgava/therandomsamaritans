@@ -7,15 +7,23 @@
     margin: auto;
 }
 
-.contactBody {
+.signupBody {
     background-color: lightblue;
-    min-height: 60vh;
+    min-height: 20vh;
     font-size: calc(5px + 2vmin);
     color: black;
-    padding: 15px;
-    margin: 0px;
+    padding: 15vh;
+    margin: 5vh;
+    line-height: 5vh;
   }
 
-#contact-form {
-padding: 50px;
-}
+P.alreadyMember {
+ display: inline-block;
+ margin: auto;
+ padding-left: 20vh;
+ font-size: 25px;
+  }
+
+input.form-control {
+      margin-left: 15px;
+  }
