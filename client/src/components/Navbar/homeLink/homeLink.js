@@ -5,7 +5,7 @@ import "../Navbar.css";
 function homeLink() {
     return (
         <li className="nav-item menuLink">
-        <Link to={'/'}><strong>Home</strong></Link>
+        <Link to={'/'} className="menuLink">your.market</Link>
         </li>
     );
 }

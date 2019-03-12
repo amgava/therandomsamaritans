@@ -5,7 +5,7 @@ import "../Navbar.css";
 function contactLink() {
     return (
         <li className="nav-item menuLink">
-        <Link to={'/contact'}><strong>Contact</strong></Link>
+        <Link to={'/contact'} className="menuLink"><strong>Contact</strong></Link>
         </li>
     );
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
 import Userok from "./Userok";
 import Makepost from "./Makepost";
 import Searchpost from "./Searchpost";
@@ -10,7 +9,6 @@ function Loggedin() {
     return (
         <Router>
             <div className="wrapper">
-                <Navbar />
                 {/* Make Post Page */}
                 <Route exact={true} path="/userok" component={Userok} />
                 {/* Make Post Page */}
