@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+/*const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
@@ -77,4 +77,4 @@ db.User
   .catch(err => {
     console.error(err);
     process.exit(1);
-  });
+  });*/
