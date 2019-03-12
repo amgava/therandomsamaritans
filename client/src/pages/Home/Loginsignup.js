@@ -15,21 +15,30 @@ class Loginsignup extends Component {
     handleInputChange = e => {
         const name = e.target.name;
         const value = e.target.value;
+        console.log(value);
         this.setState({
             [name]: value
         });
     };
 
     handleFormSubmit = e => {
+        const newUser = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            password: this.state.password,
+            confirmpassword: this.state.confirmpassword
+        }
         e.preventDefault();
-        this.submitNewUser(this.state.newuser);
+        this.setState({ newuser:  [newUser] });
+        this.submitNewUser();
     };
 
-    submitNewUser = (newuser) => {
-        console.log("I'm the Search: " + bookquery);
-        API.createUser(newuser)
-            .then(res => this.setState({ newuser: {} }))
-            .catch(err => console.log(err));
+    submitNewUser = () => {
+        console.log("hello", this.state.newuser);
+        // API.createUser(newuser)
+        //     .then(res => this.setState({ newuser: {} }))
+        //     .catch(err => console.log(err));
     };
 
     render() {

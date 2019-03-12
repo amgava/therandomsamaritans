@@ -7,21 +7,21 @@ function Signupform(props) {
         <div className="signupform-input">
           <input
             onChange={props.handleInputChange}
-            value={props.firstName}
-            name="firstName"
+            value={props.firstname}
+            name="firstname"
             type="text"
             className="form-control"
             placeholder="First Name"
-            id="firstName"
+            id="firstname"
           />
           <input
             onChange={props.handleInputChange}
-            value={props.lastName}
-            name="lastName"
+            value={props.lastname}
+            name="lastname"
             type="text"
             className="form-control"
             placeholder="Last Name"
-            id="lastName"
+            id="lastname"
           />
           <input
             onChange={props.handleInputChange}
