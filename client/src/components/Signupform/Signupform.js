@@ -50,7 +50,7 @@ function Signupform(props) {
             placeholder="Confirm Password"
             id="confirmpassword"
           />
-          <button onClick={props.handleFormSubmit} className="submitButton">
+          <button onClick={props.handleNewUserFormSubmit} className="submitButton">
             Register
         </button>
         </div>

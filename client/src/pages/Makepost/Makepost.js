@@ -1,20 +1,19 @@
 import React from 'react';
-import Navbar from "../../components/Navbar/Navbar";
+import Pageswitch from "../../components/Pageswitch/Pageswitch";
 import Footer from "../../components/Footer/Footer";
 
-function Searchpost() {
+function Makepost() {
     return (
         <div className="wrapper">
             <header className="App-header">
-                <h1 className="siteTitle">Search Posts</h1>
-                <Navbar />
+                <Pageswitch />
             </header>
             <div className="App-body">
-                <p>This is the page for making search/browsing posts</p>
+                <p>This is the page for making new posts</p>
                 <Footer />
             </div>
         </div>
     );
 }
 
-export default Searchpost;
+export default Makepost;
