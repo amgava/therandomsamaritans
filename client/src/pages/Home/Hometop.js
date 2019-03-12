@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import "./Home.css";
 
-function Hometop() {
+function Hometop(props) {
     return (
-        <div className="wrapper">
-            <p className="alreadyMember">Already a member? Click <Link to={'/login'}>here</Link> to login.</p>
+        <div className="homepageToggleBar">
+            <button onClick={props.togglePageState} className="pageToggleButton">
+                Login/Sign-Up
+          </button>
         </div>
     );
 }

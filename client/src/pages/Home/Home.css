@@ -2,9 +2,29 @@
     display: none;
 }
 
+.homepageToggleBar {
+  width: 50%;
+  margin: auto;
+}
+
+.pageToggleButton {
+  width: 200px;
+  padding: 4vh;
+  margin-bottom: 5vh;
+}
+
 .signupSpacer {
     width: 80%;
-    margin: auto;
+    padding: 5vh;
+    background-color: aliceblue;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+}
+
+button.submitButton {
+  margin: 2vh;
 }
 
 .signupBody {
