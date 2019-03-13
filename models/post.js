@@ -5,7 +5,7 @@ const postSchema = new Schema({
   location: { type: String, required: true },
   description: { type: [String],required: true },
   contactNo: { type: String, required: true },
-  price: { type:double, default: '0'},
+  price: { type:Number, default: '0'},
   expiryDate: { type: Date, required: true },
   User: {
     type: Schema.Types.ObjectId,
