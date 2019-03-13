@@ -9,7 +9,7 @@ function Searchpost() {
                 <Pageswitch />
             </header>
             <div className="App-body">
-            <p>This is the page for making search/browsing posts</p>
+                <p>Make New Post Page</p>
                 <Footer />
             </div>
         </div>
