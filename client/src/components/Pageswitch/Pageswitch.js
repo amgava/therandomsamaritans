@@ -11,6 +11,13 @@ export default class Pageswitch extends Component {
         };
     }
 
+    componentDidMount() {
+        const securityCheck = this.state.currentUserID;
+        if (securityCheck !== "") {
+            alert("Please log in");
+        }
+    }
+
     togglewhichpage = (e) => {
         if (this.state.whichPage === true) {
             this.setState({ whichPage: false });
@@ -26,21 +33,17 @@ export default class Pageswitch extends Component {
         if (this.state.whichPage === true) {
             return (
                 <div className="pageSwitchBar">
-                    <button onClick={this.togglewhichpage} className="pageToggleButton">
-                        Toggle On</button>
-                        <br></br>
-                    <Link to={'/makepost'}>Go To Post Page</Link>
-                    <Link to={'/searchpost'}>Go To Search Page</Link>
+                    <button>
+                        <Link onClick={this.togglewhichpage} className="pageToggleButton" to={'/makepost'}>Go To Post Page</Link>
+                    </button>
                 </div>
             );
         } else {
             return (
                 <div className="pageSwitchBar">
-                    <button onClick={this.togglewhichpage} className="pageToggleButton">
-                        Toggle Off</button>
-                        <br></br>
-                    <Link to={'/makepost'}>Go To Post Page</Link>
-                    <Link to={'/searchpost'}>Go To Search Page</Link>
+                    <button>
+                        <Link onClick={this.togglewhichpage} className="pageToggleButton" to={'/searchpost'}>Go To Search Page</Link>
+                    </button>
                 </div>
             );
         }

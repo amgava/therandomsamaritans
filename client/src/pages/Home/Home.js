@@ -17,7 +17,7 @@ export default class Home extends Component {
             location: "",
             password: "",
             confirmpassword: "",
-            currentPage: true,
+            currentPage: false,
             userCheck: {}
         };
         this.togglepagestate = this.togglepagestate.bind(this);
@@ -84,31 +84,45 @@ export default class Home extends Component {
         console.log(this.state);
         if (this.state.currentPage === false) {
             return (
-                <div className="App-body">
-                    <Hometop togglepagestate={this.togglepagestate} />
-                    <Loginform
-                        email={this.state.email}
-                        password={this.state.password}
-                        handleNewUserFormSubmit={this.handleLoginFormSubmit}
-                        handleInputChange={this.handleInputChange}
-                    />
-                    <Link to={'/landing'}>  Go To Logged-In Page  </Link>
+                <div className="wrapper">
+                    <header className="App-header">
+                        <div className="landingBar">
+                            <p><strong className="landingTitle">Sign Up Now!</strong></p>
+                        </div>
+                    </header>
+                    <div className="App-body">
+                        <Hometop togglepagestate={this.togglepagestate} />
+                        <Loginform
+                            email={this.state.email}
+                            password={this.state.password}
+                            handleNewUserFormSubmit={this.handleLoginFormSubmit}
+                            handleInputChange={this.handleInputChange}
+                        />
+                        <Link to={'/landing'}>  Go To Logged-In Page  </Link>
+                    </div>
                 </div>
             );
         } else {
             return (
-                <div className="App-body">
-                    <Hometop togglepagestate={this.togglepagestate} />
-                    <Newuserform
-                        firstname={this.state.firstname}
-                        lastname={this.state.lastname}
-                        password={this.state.password}
-                        email={this.state.email}
-                        location={this.state.location}
-                        handleNewUserFormSubmit={this.handleNewUserFormSubmit}
-                        handleInputChange={this.handleInputChange}
-                    />
-                    <Link to={'/landing'}>  Go To Logged-In Page  </Link>
+                <div className="wrapper">
+                    <header className="App-header">
+                        <div className="landingBar">
+                            <p><strong className="landingTitle">Sign Up Now!</strong></p>
+                        </div>
+                    </header>
+                    <div className="App-body">
+                        <Hometop togglepagestate={this.togglepagestate} />
+                        <Newuserform
+                            firstname={this.state.firstname}
+                            lastname={this.state.lastname}
+                            password={this.state.password}
+                            email={this.state.email}
+                            location={this.state.location}
+                            handleNewUserFormSubmit={this.handleNewUserFormSubmit}
+                            handleInputChange={this.handleInputChange}
+                        />
+                        <Link to={'/landing'}>  Go To Logged-In Page  </Link>
+                    </div>
                 </div>
             );
         }

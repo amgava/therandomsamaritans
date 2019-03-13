@@ -3,14 +3,14 @@
 }
 
 .homepageToggleBar {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
 
 .pageToggleButton {
-  width: 200px;
-  padding: 4vh;
-  margin-bottom: 5vh;
+  width: 400px;
+  padding: 1vh;
+  margin-bottom: 15px;
 }
 
 .signupSpacer {

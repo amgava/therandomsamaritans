@@ -6,7 +6,7 @@ function Hometop(props) {
     return (
         <div className="homepageToggleBar" >
             <button onClick={() => props.togglepagestate()} className="pageToggleButton">
-                Login/Sign-Up
+                Toggle Login Page/ Sign-Up Page
           </button>
         </div>
     );
