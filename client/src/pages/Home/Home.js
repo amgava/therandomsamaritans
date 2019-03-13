@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Hometop from "./Hometop";
 import Newuserform from "../../components/Signupform/Signupform";
 import Loginform from "../../components/Loginform/Loginform";
+import API from "../../utils/API";
 
 import "./Home.css";
 
@@ -43,14 +44,13 @@ export default class Home extends Component {
         const newUser = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
-            email: this.state.email,
-            location: this.state.location,
             password: this.state.password,
-            confirmpassword: this.state.confirmpassword
+            email: this.state.email,
+            location: this.state.location
         }
         e.preventDefault();
         this.setState({ userCheck: newUser });
-        this.submitNewUser();
+        this.submitNewUser(newUser);
     };
 
     handleLoginFormSubmit = e => {
@@ -64,11 +64,13 @@ export default class Home extends Component {
         this.checkUserLogin();
     };
 
-    submitNewUser = () => {
-        console.log("submitNewUser ", this.state.userCheck);
-        // API.createUser(newuser)
-        //     .then(res => this.setState({ userCheck: {} }))
-        //     .catch(err => console.log(err));
+    submitNewUser = (newuser) => {
+        API.saveUser(newuser)
+            .then(res => this.setState({ userCheck: {} }).then(function () {
+                console.log("newUser ", newuser);
+                console.log("res", res);
+            }))
+            .catch(err => console.log(err));
     };
 
     checkUserLogin = () => {
