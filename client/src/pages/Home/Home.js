@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Hometop from "./Hometop";
 import Newuserform from "../../components/Signupform/Signupform";
 import Loginform from "../../components/Loginform/Loginform";
+
 import "./Home.css";
 
 export default class Home extends Component {
@@ -11,9 +13,10 @@ export default class Home extends Component {
             firstname: "",
             lastname: "",
             email: "",
+            location: "",
             password: "",
             confirmpassword: "",
-            currentPage: "login",
+            currentPage: true,
             userCheck: {}
         };
         this.togglepagestate = this.togglepagestate.bind(this);
@@ -23,12 +26,8 @@ export default class Home extends Component {
     }
 
     togglepagestate = () => {
-        console.log("hello ", this.state.currentPage);
-        if (this.state.currentPage === "login") {
-            this.setState({ currentPage: "signup" })
-        } else {
-            this.setState({ currentPage: "login" })
-        }
+        const whatState = !this.state.currentPage;
+        this.setState({ currentPage: whatState });
     };
 
     handleInputChange = e => {
@@ -45,6 +44,7 @@ export default class Home extends Component {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,
+            location: this.state.location,
             password: this.state.password,
             confirmpassword: this.state.confirmpassword
         }
@@ -80,7 +80,7 @@ export default class Home extends Component {
 
     renderPage = () => {
         console.log(this.state);
-        if (this.state.currentPage === "signup") {
+        if (this.state.currentPage === false) {
             return (
                 <div className="App-body">
                     <Hometop togglepagestate={this.togglepagestate} />
@@ -90,6 +90,7 @@ export default class Home extends Component {
                         handleNewUserFormSubmit={this.handleLoginFormSubmit}
                         handleInputChange={this.handleInputChange}
                     />
+                    <Link to={'/landing'}>  Go To Logged-In Page  </Link>
                 </div>
             );
         } else {
@@ -99,12 +100,13 @@ export default class Home extends Component {
                     <Newuserform
                         firstname={this.state.firstname}
                         lastname={this.state.lastname}
-                        email={this.state.email}
                         password={this.state.password}
-                        confirmpassword={this.state.confirmpassword}
+                        email={this.state.email}
+                        location={this.state.location}
                         handleNewUserFormSubmit={this.handleNewUserFormSubmit}
                         handleInputChange={this.handleInputChange}
                     />
+                    <Link to={'/landing'}>  Go To Logged-In Page  </Link>
                 </div>
             );
         }
