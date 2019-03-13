@@ -9,7 +9,7 @@ function Makepost() {
                 <Pageswitch />
             </header>
             <div className="App-body">
-                <p>This Page Holds Search Results</p>
+                <p>This Page Will Hold The Make New Post Form</p>
                 <Footer />
             </div>
         </div>
