@@ -10,7 +10,7 @@ router.route("/loginUser")
 router
   .route("/:id")
   .get(userController.findById)
-  .put(userController.update)
+ // .put(userController.update)
   .delete(userController.remove);
 
 module.exports = router;
