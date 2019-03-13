@@ -1,0 +1,11 @@
+.landingBar {
+    text-align: center;
+    margin: auto;
+    padding: 25px;
+}
+
+.landingTitle {
+    font-size: 4vh;
+    margin-left: 25px;
+    margin-right: 25px;
+}

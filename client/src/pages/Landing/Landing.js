@@ -1,15 +1,21 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import "./Landing.css";
 
 function Landing() {
     return (
         <div className="wrapper">
-            <p>The Landing Page!
-            <Link to={'/searchpost'}>Go To Search Page</Link>
-            <br></br>
-            <Link to={'/makepost'}>Go To Post Page</Link>
-            </p>
+            <header className="App-header">
+                <div className="landingBar">
+                    <strong className="landingTitle">The Landing Page!</strong>
+                </div>
+            </header>
+            <div className="App-body">
+                <Link to={'/searchpost'}>Search Items</Link>
+                <strong>   Choose what to do first   </strong>
+                <Link to={'/makepost'}>Create Post</Link>
+            </div>
             <Footer />
         </div>
     );
