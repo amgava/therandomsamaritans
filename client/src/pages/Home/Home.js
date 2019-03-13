@@ -41,16 +41,21 @@ export default class Home extends Component {
     };
 
     handleNewUserFormSubmit = e => {
-        const newUser = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            password: this.state.password,
-            email: this.state.email,
-            location: this.state.location
+        if (this.state.password === this.state.confirmpassword) {
+            const newUser = {
+                firstname: this.state.firstname,
+                lastname: this.state.lastname,
+                password: this.state.password,
+                email: this.state.email,
+                location: this.state.location
+            }
+            e.preventDefault();
+            this.setState({ userCheck: newUser });
+            this.submitNewUser(newUser);
+        } else {
+            alert("passwords do not match");
+            this.setState({ password: "", confirmpassword: "" });
         }
-        e.preventDefault();
-        this.setState({ userCheck: newUser });
-        this.submitNewUser(newUser);
     };
 
     handleLoginFormSubmit = e => {
@@ -118,6 +123,7 @@ export default class Home extends Component {
                             password={this.state.password}
                             email={this.state.email}
                             location={this.state.location}
+                            confirmpassword={this.state.confirmpassword}
                             handleNewUserFormSubmit={this.handleNewUserFormSubmit}
                             handleInputChange={this.handleInputChange}
                         />

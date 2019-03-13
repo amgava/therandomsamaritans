@@ -25,6 +25,15 @@ function Signupform(props) {
         />
         <input
           onChange={props.handleInputChange}
+          value={props.password}
+          name="password"
+          type="text"
+          className="form-control"
+          placeholder="password"
+          id="password"
+        />
+        <input
+          onChange={props.handleInputChange}
           value={props.email}
           name="email"
           type="text"
@@ -40,15 +49,6 @@ function Signupform(props) {
           className="form-control"
           placeholder="Location"
           id="location"
-        />
-        <input
-          onChange={props.handleInputChange}
-          value={props.password}
-          name="password"
-          type="text"
-          className="form-control"
-          placeholder="password"
-          id="password"
         />
         <input
           onChange={props.handleInputChange}
