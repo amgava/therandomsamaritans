@@ -20,6 +20,7 @@ export default class Home extends Component {
             currentPage: false,
             userCheck: {}
         };
+        this.resetform = this.resetform.bind(this);
         this.togglepagestate = this.togglepagestate.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleNewUserFormSubmit = this.handleNewUserFormSubmit.bind(this);
@@ -76,7 +77,20 @@ export default class Home extends Component {
                console.log("res", data);
             })
             .catch(err => console.log(err));
+            this.resetform();
     };
+
+    resetform = () => {
+        this.setState({
+            firstname: "",
+            lastname: "",
+            email: "",
+            location: "",
+            password: "",
+            confirmpassword: "",
+            userCheck: {}
+           });
+    }
 
     checkUserLogin = () => {
         console.log("checkUserLogin ", this.state.userCheck);

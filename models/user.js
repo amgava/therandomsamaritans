@@ -7,12 +7,11 @@ const userSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
-    firstname: { type: String, required: true },
-    lastname: { type: String, required: true },
-    location: {type: String, required: false},
-    password:{ type:String, required:true}
-    
-    
+  firstname: { type: String, required: true },
+  lastname: { type: String, required: true },
+  email: { type: String, required: true },
+  location: { type: String, required: false },
+  password: { type: String, required: true }
 });
 
 const User = mongoose.model("User", userSchema);

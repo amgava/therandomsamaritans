@@ -7,6 +7,7 @@ export default {
         },   
    
   // Gets the posts with the given Category and Location
+
   getPosts: function(category,location) {
     return axios.get("/api/post"+ category + location );
   },
