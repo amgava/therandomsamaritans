@@ -80,6 +80,7 @@ export default class Searchpost extends Component {
                 </header>
                 <div className="App-body">
                     <p>Search Results Go Here</p>
+                    <img alt="placeholder" src={require('./placeholdersearchresults.png')} />
                     <Footer />
                 </div>
             </div>
