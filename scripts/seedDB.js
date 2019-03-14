@@ -32,23 +32,23 @@ const userSeed = [
 
 const postSeed = [
   {
-    title: "My Post",
-    author: "Stephen King",
-    link: "link.address",
+    email: "My Email 1",
+    location: "location 1",
+    category: "category 1",
     postContent: "This is some demo post content 1",
     date: new Date(Date.now())
   },
   {
-    title: "My Post",
-    author: "Stephen King",
-    link: "link.address",
+    email: "My Email 2",
+    location: "location 2",
+    category: "category 2",
     postContent: "This is some demo post content 2",
     date: new Date(Date.now())
   },
   {
-    title: "My Post",
-    author: "Stephen King",
-    link: "link.address",
+    email: "My Email 3",
+    location: "location 3",
+    category: "category 3",
     postContent: "This is some demo post content 3",
     date: new Date(Date.now())
   }

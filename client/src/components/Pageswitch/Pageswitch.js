@@ -17,19 +17,19 @@ export default class Pageswitch extends Component {
         }
     }
 
-    renderPage = () => {
+    renderComponent = () => {
         const getUrl = window.location.href;
         const parseUrl = getUrl.split("/");
         const verifyPage = parseUrl[3];
         console.log(verifyPage);
         if (verifyPage === "searchpost") {
-            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} className="pageToggleButton" to={'/makepost'}>Go To Create New Post Page</Link></div>);
+            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} className="pageToggle" to={'/makepost'}>Go To Create New Post Page</Link></div>);
         } else {
-            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} className="pageToggleButton" to={'/searchpost'}>Go To Search Page</Link></div>);
+            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} className="pageToggle" to={'/searchpost'}>Go To Search Page</Link></div>);
         }
     };
 
     render() {
-        return this.renderPage();
+        return this.renderComponent();
     }
 }
