@@ -71,10 +71,10 @@ export default class Home extends Component {
 
     submitNewUser = (newuser) => {
         API.saveUser(newuser)
-            .then(res => this.setState({ userCheck: {} }).then(function () {
+            .then(function (data) {
                 console.log("newUser ", newuser);
-                console.log("res", res);
-            }))
+               console.log("res", data);
+            })
             .catch(err => console.log(err));
     };
 
