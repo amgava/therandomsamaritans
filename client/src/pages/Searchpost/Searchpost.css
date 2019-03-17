@@ -1,5 +1,20 @@
-.search-post-form {
-    text-align: center;
-    margin: 10px;
-    letter-spacing: 4px;
+
+.formLabel {
+    display: inline-flex;  
+    float: left;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.formItem {
+    display: flex;
+    padding-right: 25px;
+    padding-left: 25px;
+    float: left;
+}
+
+.pageSplit {
+    border-width: 30px;
+    margin-top: 8vh;
+    width: 100%;
 }

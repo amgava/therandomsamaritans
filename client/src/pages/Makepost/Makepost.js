@@ -1,19 +1,25 @@
 import React, { Component } from "react";
 import Pageswitch from "../../components/Pageswitch/Pageswitch";
 import Footer from "../../components/Footer/Footer";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import "./Makepost.css";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 export default class Makepost extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            category: "",
-            location: "",
-            results: []
+            userId: { type: String },
+            category: { type: String },
+            location: { type: String },
+            description: { type: [String] },
+            contactNo: { type: String },
+            price: { type: Number, default: '0' },
+            expiryDate: { type: Date },
         };
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSearchPostsFormSubmit = this.handleSearchPostsFormSubmit.bind(this);
+        this.handleNewPostsFormSubmit = this.handleNewPostsFormSubmit.bind(this);
     }
 
     handleInputChange = e => {
@@ -25,18 +31,10 @@ export default class Makepost extends Component {
         console.log(this.state.results);
     };
 
-    handleSearchPostsFormSubmit = (e) => {
+    handleNewPostsFormSubmit = (e) => {
         e.preventDefault();
-        console.log("category " + this.state.category)
-        this.newresults();
-    };
-
-    newresults = () => {
-        let category = this.state.category;
-        let location = this.state.location;
-        API.getPosts(category, location)
-            .then(res => this.setState({ results: [res.data] }))
-            .catch(err => console.log(err));
+        console.log("userId " + this.state.userId)
+        // API Call goes here
     };
 
     render() {
@@ -44,46 +42,110 @@ export default class Makepost extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <Pageswitch />
-                    <form className="search-post-form">
-                        <div className="search-post-form-input">
-                            <strong>Make Post Form</strong>
-                            <br />
-                            <select
-                                onChange={this.handleInputChange}
-                                name="category"
-                                type="text"
-                                className="form-control"
-                                placeholder="category"
-                                id="category">
-                                <option value="food">Food</option>
-                                <option value="services">Services</option>
-                                <option defaultValue="handywork">Handywork</option>
-                                <option value="babysitting">Babysitting</option>
-                            </select>
-                            <select
-                                onChange={this.handleInputChange}
-                                name="location"
-                                type="text"
-                                className="form-control"
-                                placeholder="location"
-                                id="location">
-                                <option value="stclair">St Clair Station</option>
-                                <option value="yandbloor">Yonge and Bloor</option>
-                                <option defaultValue="bathurst">Bathurst Station</option>
-                                <option value="coxwell">Coxwell Station</option>
-                            </select>
-                            <button onClick={this.handleSearchPostsFormSubmit} className="submitButton">
-                                Search Stuff
-                            </button>
-                        </div>
-                    </form>
                 </header>
                 <div className="App-body">
-                    <p>A form goes here</p>
-                    <Footer />
+                    <div className="makePostPageBox">
+                        <Form className="clearfix">
+                            <h2>Post New Item</h2>
+                            <div className="formItem">
+                                <Form.Control
+                                    controlId="userId"
+                                    onChange={this.handleInputChange}
+                                    name="userId"
+                                    type="text"
+                                    value={this.state.userId}
+                                    className="hiddenValue"
+                                />
+                            </div>
+                            <div className="formItem">
+                                <Form.Label
+                                    className="formLabel">
+                                    Categorey</Form.Label>
+                                <Form.Control as="select"
+                                    controlId="category"
+                                    onChange={this.handleInputChange}
+                                    name="category"
+                                    type="text"
+                                >
+                                    <option defaultValue="food">Food</option>
+                                    <option value="services">Services</option>
+                                    <option value="handywork">Handywork</option>
+                                    <option value="babysitting">Babysitting</option>
+                                </Form.Control>
+                            </div>
+                            <div className="formItem">
+                                <Form.Label
+                                    className="formLabel">
+                                    Location</Form.Label>
+                                <Form.Control as="select"
+                                    controlId="location"
+                                    onChange={this.handleInputChange}
+                                    name="location"
+                                    type="text"
+                                >
+                                    <option defaultValue="stclair">St Clair Station</option>
+                                    <option value="yandbloor">Yonge and Bloor</option>
+                                    <option value="bathurst">Bathurst Station</option>
+                                    <option value="coxwell">Coxwell Station</option>
+                                </Form.Control>
+                            </div>
+                            <br />
+                            <br />
+                            <div className="descriptionBox">
+                                <Form.Label
+                                    className="formLabel"
+                                >Description</Form.Label>
+                                <Form.Control as="textarea" rows="5"
+                                    controlId="description"
+                                    onChange={this.handleInputChange}
+                                    value={this.description}
+                                    name="description"
+                                    placeholder="description"
+                                />
+                            </div>
+                            <br />
+                            <br />
+                            <div className="formItem">
+                                <Form.Control
+                                    controlId="contactNo"
+                                    type="text"
+                                    onChange={this.handleInputChange}
+                                    value={this.contactNo}
+                                    name="contactNo"
+                                    placeholder="contactNo"
+                                />
+                            </div>
+                            <div className="formItem">
+                                <Form.Control
+                                    type="number"
+                                    controlId="price"
+                                    onChange={this.handleInputChange}
+                                    value={this.price}
+                                    name="price"
+                                    placeholder="price"
+                                />
+                            </div>
+                            <div className="formItem">
+                                <Form.Control
+                                    type="date"
+                                    controlId="expiryDate"
+                                    onChange={this.handleInputChange}
+                                    value={this.expiryDate}
+                                    name="expiryDate"
+                                    placeholder="expiryDate"
+                                />
+                            </div>
+                            <div className="formItem">
+                                <Button variant="primary"
+                                    className="submitNewPost"
+                                    onClick={this.handleNewPostsFormSubmit}
+                                >Create New Post</Button>
+                            </div>
+                        </Form>
+                    </div>
                 </div>
+                <Footer />
             </div>
-                    );
-                }
-            }
-            
+        );
+    }
+}

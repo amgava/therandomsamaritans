@@ -9,16 +9,14 @@
 
 .App-header {
   background-color: #222;
-  min-height: 3vh;
-  padding: 1vh;
+  min-height: 10vh;
   color: white;
   margin: 0px;
+  padding-top: 25px;
 }
 
 .App-body {
-  min-height: 30vh;
-  margin: auto;
-  padding-top: 5vh;
+  margin-top: 5vh;
   text-align: center;
 }
 
@@ -27,7 +25,6 @@
   font-size: 25px;
   min-height: 10vh;
   margin-top: 45px;
-  position: sticky;
   border: 2px;
   border-color: black;
   background-color: green;
