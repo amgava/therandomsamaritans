@@ -1,0 +1,28 @@
+.hiddenValue {
+    display: none;
+}
+
+.submitNewPost {
+    text-align: center;
+    margin: 15px;
+}
+
+.formItem {
+    display: inline-flex;
+    float: left;
+}
+
+.descriptionBox {
+    display: inline;
+}
+
+.makePostPageBox {
+    padding: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.formLabel {
+    font-weight: bolder;
+}
+

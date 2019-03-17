@@ -1,0 +1,12 @@
+.buy-btn {
+  float: right;
+  color: #e74944;
+}
+
+A.buyLink { color: black; text-decoration: none; }
+
+A:link.buyLink { text-decoration: none }
+
+A:active.buyLink { text-decoration: none }
+
+A:hover.buyLink { background-color: transparent; text-decoration: underline; border: 0px; text-shadow: 2px 2px #b6b6b6;}

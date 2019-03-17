@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Pageswitch from "../../components/Pageswitch/Pageswitch";
+import Searchresults from "../../components/Seachresults/Searchresults";
 import Footer from "../../components/Footer/Footer";
 import API from "../../utils/API";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import "./Searchpost.css";
 
 export default class Searchpost extends Component {
@@ -44,43 +47,54 @@ export default class Searchpost extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <Pageswitch />
-                    <form className="search-post-form">
-                        <div className="search-post-form-input">
-                            <strong>Search Controls</strong>
-                            <br />
-                            <select
+                </header>
+                <div className="App-body">
+                    <Form>
+                        <div className="formItem">
+                            <Form.Label
+                                className="formLabel"
+                            >Categorey</Form.Label>
+                            <Form.Control as="select" column
+                                controlId="category"
                                 onChange={this.handleInputChange}
                                 name="category"
                                 type="text"
-                                className="form-control"
-                                placeholder="category"
                                 id="category">
-                                <option value="food">Food</option>
+                                <option defaultValue="food">Food</option>
                                 <option value="services">Services</option>
-                                <option defaultValue="handywork">Handywork</option>
+                                <option value="handywork">Handywork</option>
                                 <option value="babysitting">Babysitting</option>
-                            </select>
-                            <select
+                            </Form.Control>
+                        </div>
+                        <div className="formItem">
+                            <Form.Label
+                                className="formLabel">
+                                Location</Form.Label>
+                            <Form.Control as="select" column
+                                controlId="location"
                                 onChange={this.handleInputChange}
                                 name="location"
                                 type="text"
-                                className="form-control"
-                                placeholder="location"
                                 id="location">
-                                <option value="stclair">St Clair Station</option>
+                                <option defaultValue="stclair">St Clair Station</option>
                                 <option value="yandbloor">Yonge and Bloor</option>
-                                <option defaultValue="bathurst">Bathurst Station</option>
+                                <option value="bathurst">Bathurst Station</option>
                                 <option value="coxwell">Coxwell Station</option>
-                            </select>
-                            <button onClick={this.handleSearchPostsFormSubmit} className="submitButton">
-                                Search Stuff
-                            </button>
+                            </Form.Control>
                         </div>
-                    </form>
-                </header>
-                <div className="App-body">
+                        <div className="formItem">
+                            <Button variant="primary"
+                                onClick={this.handleSearchPostsFormSubmit} >
+                                Search Stuff
+                            </Button>
+                        </div>
+                    </Form>
+                    <br />
+                    <hr className="pageSplit" />
+                    <br />
                     <p>Search Results Go Here</p>
-                    <img alt="placeholder" src={require('./placeholdersearchresults.png')} />
+                    <Searchresults />
+                    {/* <img alt="placeholder" src={require('./placeholdersearchresults.png')} /> */}
                     <Footer />
                 </div>
             </div>
