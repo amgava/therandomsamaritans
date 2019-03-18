@@ -49,7 +49,7 @@ export default class Makepost extends Component {
                             <h2>Post New Item</h2>
                             <div className="formItem">
                                 <Form.Control
-                                    controlId="userId"
+                                    id="userId"
                                     onChange={this.handleInputChange}
                                     name="userId"
                                     type="text"
@@ -62,7 +62,7 @@ export default class Makepost extends Component {
                                     className="formLabel">
                                     Categorey</Form.Label>
                                 <Form.Control as="select"
-                                    controlId="category"
+                                    id="category"
                                     onChange={this.handleInputChange}
                                     name="category"
                                     type="text"
@@ -78,7 +78,7 @@ export default class Makepost extends Component {
                                     className="formLabel">
                                     Location</Form.Label>
                                 <Form.Control as="select"
-                                    controlId="location"
+                                    id="location"
                                     onChange={this.handleInputChange}
                                     name="location"
                                     type="text"
@@ -96,7 +96,7 @@ export default class Makepost extends Component {
                                     className="formLabel"
                                 >Description</Form.Label>
                                 <Form.Control as="textarea" rows="5"
-                                    controlId="description"
+                                    id="description"
                                     onChange={this.handleInputChange}
                                     value={this.description}
                                     name="description"
@@ -107,7 +107,7 @@ export default class Makepost extends Component {
                             <br />
                             <div className="formItem">
                                 <Form.Control
-                                    controlId="contactNo"
+                                    id="contactNo"
                                     type="text"
                                     onChange={this.handleInputChange}
                                     value={this.contactNo}
@@ -118,7 +118,7 @@ export default class Makepost extends Component {
                             <div className="formItem">
                                 <Form.Control
                                     type="number"
-                                    controlId="price"
+                                    id="price"
                                     onChange={this.handleInputChange}
                                     value={this.price}
                                     name="price"
@@ -128,7 +128,7 @@ export default class Makepost extends Component {
                             <div className="formItem">
                                 <Form.Control
                                     type="date"
-                                    controlId="expiryDate"
+                                    id="expiryDate"
                                     onChange={this.handleInputChange}
                                     value={this.expiryDate}
                                     name="expiryDate"

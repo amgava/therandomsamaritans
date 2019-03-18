@@ -54,8 +54,8 @@ export default class Searchpost extends Component {
                             <Form.Label
                                 className="formLabel"
                             >Categorey</Form.Label>
-                            <Form.Control as="select" column
-                                controlId="category"
+                            <Form.Control as="select" 
+                                id="category"
                                 onChange={this.handleInputChange}
                                 name="category"
                                 type="text"
@@ -70,8 +70,8 @@ export default class Searchpost extends Component {
                             <Form.Label
                                 className="formLabel">
                                 Location</Form.Label>
-                            <Form.Control as="select" column
-                                controlId="location"
+                            <Form.Control as="select"
+                                id="location"
                                 onChange={this.handleInputChange}
                                 name="location"
                                 type="text"
