@@ -1,7 +1,7 @@
 import React from "react";
 import "../../pages/Home/Home.css";
 
-function Signupform(props) {
+function Newuserform(props) {
   return (
     <form className="sign-up-form">
       <div className="signupform-input">
@@ -67,4 +67,4 @@ function Signupform(props) {
   );
 }
 
-export default Signupform;
+export default Newuserform;
