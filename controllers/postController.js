@@ -17,7 +17,7 @@ module.exports = {
   },
   findByCat: function(req, res) {
     db.Post
-    .find({category: req.params})
+    .find({category: req.params.category})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },
