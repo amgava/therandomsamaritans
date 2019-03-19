@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link , Redirect} from "react-router-dom";
 import Hometop from "./Hometop";
 import Newuserform from "../../components/Newuserform/Newuserform";
 import Loginform from "../../components/Loginform/Loginform";
@@ -19,10 +19,10 @@ export default class Home extends Component {
             confirmpassword: "",
             currentPage: false,
         };
-       // this.resetform = this.resetform.bind(this);
+        this.resetform = this.resetform.bind(this);
         this.togglepagestate = this.togglepagestate.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
-        //this.handleNewUserFormSubmit = this.handleNewUserFormSubmit.bind(this);
+        this.handleNewUserFormSubmit = this.handleNewUserFormSubmit.bind(this);
         this.handleLoginFormSubmit = this.handleLoginFormSubmit.bind(this);
     }
 
@@ -95,12 +95,12 @@ export default class Home extends Component {
                 }
                 console.log("user Exists and login Successful");
                 console.log(res.data);
-                //return <Redirect to={`/landing/${res.data._id}`} />
+                return <Redirect to={`/landing/${res.data._id}`} />
             })
             .catch(err => console.log(err));
          };
 
-       /* resetform = () => {
+        resetform = () => {
             this.setState({
                 firstname: "",
                 lastname: "",
@@ -110,7 +110,7 @@ export default class Home extends Component {
                 confirmpassword: "",
                 userCheck: {}
             });
-        }*/
+        }
 
         renderPage = () => {
             if (this.state.currentPage === false) {
