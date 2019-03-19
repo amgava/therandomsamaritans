@@ -3,9 +3,7 @@ import "./Buybutton.css";
 
 function Buybutton(props) {
   return (
-    <span className="buy-btn" role="button" tabIndex="0">
-      <button className="buyLink" onClick={() => props.savebook(props.title, props.author, props.link)}></button>
-    </span>
+    <span className="btn buy-btn" role="button" onClick={() => props.buyitem(props._id)} tabIndex="0" />
   );
 }
 
