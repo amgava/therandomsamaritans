@@ -14,7 +14,7 @@ function App() {
       <div>
         <Navbar />
         <Route exact path="/" component={Home} />
-        <Route path="/landing" component={Landing} />
+        <Route path="/landing/:id" component={Landing} />
         <Route path="/makepost" component={Makepost} />
         <Route path="/searchpost" component={Searchpost} />
         <Route path="/contact" component={Contact} />

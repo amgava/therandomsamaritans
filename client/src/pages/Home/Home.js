@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Hometop from "./Hometop";
 import Newuserform from "../../components/Newuserform/Newuserform";
 import Loginform from "../../components/Loginform/Loginform";
@@ -59,25 +59,36 @@ export default class Home extends Component {
         }
     };
 
-    handleLoginFormSubmit = e => {
-        const checkUser = {
-            email: this.state.email,
-            password: this.state.password,
-            confirmpassword: this.state.confirmpassword
-        }
-        e.preventDefault();
-        this.setState({ userCheck: checkUser });
-        this.checkUserLogin();
-    };
-
     submitNewUser = (newuser) => {
         API.saveUser(newuser)
             .then(function (data) {
                 console.log("newUser ", newuser);
-               console.log("res", data);
+                console.log("res", data);
             })
             .catch(err => console.log(err));
-            this.resetform();
+        this.resetform();
+    };
+
+    handleLoginFormSubmit = e => {
+        e.preventDefault();
+        const checkUser = {
+            email: this.state.email,
+            password: this.state.password,
+        }
+        this.setState({ userCheck: checkUser });
+        this.checkUserLogin();
+    };
+
+    checkUserLogin = () => {
+        const isAuth = {
+            email: this.state.email,
+            password: this.state.password,
+        }
+        API.checkUser(isAuth)
+            .then(res => {
+                return <Redirect to={`/landing/${res._id}`} />
+            })
+            .catch(err => console.log(err));
     };
 
     resetform = () => {
@@ -89,18 +100,10 @@ export default class Home extends Component {
             password: "",
             confirmpassword: "",
             userCheck: {}
-           });
+        });
     }
 
-    checkUserLogin = () => {
-        console.log("checkUserLogin ", this.state.userCheck);
-        // API.checkUser(userCheck)
-        //     .then(res => this.setState({ userCheck: {} }))
-        //     .catch(err => console.log(err));
-    };
-
     renderPage = () => {
-        console.log(this.state);
         if (this.state.currentPage === false) {
             return (
                 <div className="wrapper">
@@ -117,7 +120,7 @@ export default class Home extends Component {
                             handleNewUserFormSubmit={this.handleLoginFormSubmit}
                             handleInputChange={this.handleInputChange}
                         />
-                        <Link to={'/landing'}>  Go To Logged-In Page  </Link>
+                        <Link to={'/landing/testUser'}>  Go To Logged-In Page  </Link>
                     </div>
                 </div>
             );
