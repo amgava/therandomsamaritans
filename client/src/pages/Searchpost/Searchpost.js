@@ -17,6 +17,11 @@ export default class Searchpost extends Component {
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSearchPostsFormSubmit = this.handleSearchPostsFormSubmit.bind(this);
+        this.getResults = this.getResults.bind(this);
+    }
+
+    componentDidMount() {
+        this.getResults();
     }
 
     handleInputChange = e => {
@@ -31,15 +36,21 @@ export default class Searchpost extends Component {
     handleSearchPostsFormSubmit = (e) => {
         e.preventDefault();
         console.log("category " + this.state.category)
-        this.newresults();
+        const category = this.state.category;
+        this.getResults(category);
     };
 
-    newresults = () => {
-        let category = this.state.category;
-        let location = this.state.location;
-        API.getPosts(category, location)
-            .then(res => this.setState({ results: [res.data] }))
+    getResults = (category) => {
+        API.getPosts(category)
+            .then(res => this.setState({ results: res.data }))
             .catch(err => console.log(err));
+    };
+
+    buyItem = (id) => {
+        console.log(id);
+        // API.deleteBook(id)
+        //   .then(res => this.setState({ results: res.data }))
+        //   .catch(err => console.log(err));
     };
 
     render() {
@@ -53,16 +64,16 @@ export default class Searchpost extends Component {
                         <div className="formItem">
                             <Form.Label
                                 className="formLabel"
-                            >Categorey</Form.Label>
-                            <Form.Control as="select" 
+                            >Category</Form.Label>
+                            <Form.Control as="select"
                                 onChange={this.handleInputChange}
                                 name="category"
                                 type="text"
                                 id="category">
-                                <option defaultValue="food">Food</option>
-                                <option value="services">Services</option>
-                                <option value="handywork">Handywork</option>
-                                <option value="babysitting">Babysitting</option>
+                                <option defaultValue="Food">Food</option>
+                                <option value="Services">Services</option>
+                                <option value="Handywork">Handywork</option>
+                                <option value="Babysitting">Babysitting</option>
                             </Form.Control>
                         </div>
                         <div className="formItem">
@@ -74,10 +85,10 @@ export default class Searchpost extends Component {
                                 name="location"
                                 type="text"
                                 id="location">
-                                <option defaultValue="stclair">St Clair Station</option>
-                                <option value="yandbloor">Yonge and Bloor</option>
-                                <option value="bathurst">Bathurst Station</option>
-                                <option value="coxwell">Coxwell Station</option>
+                                <option defaultValue="St Clair Station">St Clair Station</option>
+                                <option value="Yonge and Bloor">Yonge and Bloor</option>
+                                <option value="Bathurst Station">Bathurst Station</option>
+                                <option value="Coxwell Station">Coxwell Station</option>
                             </Form.Control>
                         </div>
                         <div className="formItem">
@@ -91,7 +102,7 @@ export default class Searchpost extends Component {
                     <hr className="pageSplit" />
                     <br />
                     <p>Search Results Go Here</p>
-                    <Searchresults />
+                    <Searchresults results={this.state.results} buyitem={this.buyItem}/>
                     {/* <img alt="placeholder" src={require('./placeholdersearchresults.png')} /> */}
                     <Footer />
                 </div>

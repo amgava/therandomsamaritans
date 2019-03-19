@@ -15,6 +15,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 app.use(logger("dev"));
+
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://Pavani:Abhi2012@ds017205.mlab.com:17205/communityservice" , {useNewUrlParser: true });
 

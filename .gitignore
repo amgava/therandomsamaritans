@@ -5,6 +5,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Development Build Files
+client/build
+client/node_modules
+
 # Runtime data
 pids
 *.pid

@@ -8,48 +8,60 @@ mongoose.connect(
 
 const userSeed = [
   {
-    userId: "Stephen 1",
+    userId: "001",
     firstName: "King",
-    lastName: "link.address",
-    email: "email.address",
+    lastName: "Steven",
+    password: "12345",
+    location: "St Clair Station",
+    email: "email.address1@gmail.com",
     date: new Date(Date.now())
   },
   {
-    userId: "Stephen 2",
+    userId: "002",
     firstName: "King",
-    lastName: "link.address",
-    email: "email.address",
+    lastName: "George",
+    password: "12345",
+    location: "Yonge and Bloor",
+    email: "email.address2@gmail.com",
     date: new Date(Date.now())
   },
   {
-    userId: "Stephen 3",
-    firstName: "King",
-    lastName: "link.address",
-    email: "email.address",
+    userId: "003",
+    firstName: "Saryn",
+    lastName: "Summer",
+    password: "12345",
+    location: "Bathurst",
+    email: "email.address3@gmail.com",
     date: new Date(Date.now())
   }
 ];
 
 // const postSeed = [
 //   {
-//     email: "My Email 1",
-//     location: "location 1",
-//     category: "category 1",
-//     postContent: "This is some demo post content 1",
+//     email: "email.address3@gmail.com",
+//     category: "Services",
+//     location: "Bathurst Station",
+//     description: "Demo post content #1",
+//     contactNo: "416-416-4164",
+//     price: "12.45",
 //     date: new Date(Date.now())
 //   },
 //   {
-//     email: "My Email 2",
-//     location: "location 2",
-//     category: "category 2",
-//     postContent: "This is some demo post content 2",
+//     email: "email.address1@gmail.com",
+//     category: "Babysitting",
+//     location: "Coxwell Station",
+//     description: "Demo post content #1",
+//     contactNo: "416-416-4164",
+//     price: "12.45",
 //     date: new Date(Date.now())
 //   },
 //   {
-//     email: "My Email 3",
-//     location: "location 3",
-//     category: "category 3",
-//     postContent: "This is some demo post content 3",
+//     email: "email.address2@gmail.com",
+//     category: "Food",
+//     location: "Bathurst Station",
+//     description: "Demo post content #1",
+//     contactNo: "416-416-4164",
+//     price: 12.45,
 //     date: new Date(Date.now())
 //   }
 // ];

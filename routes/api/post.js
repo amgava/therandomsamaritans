@@ -8,8 +8,8 @@ router.route("/")
 
 // Matches with "/api/books/:id"
 router
-  .route("/:id")
-  .get(postController.findById)
+  .route("/:category")
+  .get(postController.findByCat)
  // .put(postController.update)
  // .delete(postController.remove);
 
