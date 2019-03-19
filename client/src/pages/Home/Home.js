@@ -75,15 +75,22 @@ export default class Home extends Component {
             const checkUserName = this.state.email;
             const checkPassword = this.state.password;
             this.setState({ userCheck: [checkUserName, checkPassword] });
-            this.checkUserLogin(checkUserName, checkPassword);
+            this.checkUserLogin(checkUserName,checkPassword);
         } else {
-            console.log("Please enter email and password:");
+            console.log("Please enter both email and password:");
         }
         e.preventDefault();
     };
 
-    checkUserLogin = (checkUserName, checkPassword) => {
-        API.loginUser(checkUserName, checkPassword)
+    checkUserLogin = (username,password) => {
+        console.log(username);
+        console.log(password);
+        let usercheck = {
+            email : username,
+            password: password
+        }
+        console.log(usercheck);
+        API.loginUser(usercheck)
             .then(res => {
                 if (res.data.status === "error") {
                     console.log("Check your user credentials");
@@ -91,7 +98,7 @@ export default class Home extends Component {
                 }
                 console.log("user Exists and login Successful");
                 console.log(res.data);
-                return <Redirect to={`/landing/${res.data._id}`} />
+                //return <Redirect to={`/landing/${res.data._id}`} />
             })
             .catch(err => console.log(err));
          };
