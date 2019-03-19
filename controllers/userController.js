@@ -10,19 +10,14 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findOne: function(req, res) {
-    console.log(req.body);
+    console.log(req.query);
+    
     db.User
-    .findOne({"email" : req.body.email,"password" : req.body.password }), function(err, user) 
-  {
-    if (err)
-    {
-      res.send(res.status(422).json(err));
-    }
-    else{
-      res.json(user);
-    }
-  }     // .then(dbModel => res.json(dbModel))
-     // .catch(err => res.status(422).json(err));
+    .findOne({email : req.query.email, password : req.query.password })
+    .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  
+      
   },
   findById: function(req, res) {
     db.User

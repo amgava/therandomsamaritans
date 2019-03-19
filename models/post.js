@@ -7,6 +7,7 @@ const postSchema = new Schema({
   contactNo: { type: String, required: true },
   price: { type:Number, default: '0'},
   expiryDate: { type: Date, required: true },
+  buyerId: {type: String,default: '0'},
   User: {
     type: Schema.Types.ObjectId,
     ref: "User"

@@ -3,9 +3,11 @@ import axios from "axios";
 export default {
   //Search for books based on title
   loginUser: function (usercheck) {
-    //console.log(usercheck);
-    return axios.get("/api/user", usercheck);
-  },
+    console.log(usercheck);
+    return axios.get("/api/user", {
+      params: usercheck
+  });
+},
   // Gets the posts with the given Category and Location
   getPosts: function (category) {
     return axios.get("/api/post", category);
