@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Pageswitch from "../../components/Pageswitch/Pageswitch";
 import Footer from "../../components/Footer/Footer";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 import "./Makepost.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -28,13 +28,40 @@ export default class Makepost extends Component {
         this.setState({
             [name]: value
         });
-        console.log(this.state.results);
+       // console.log(this.state.results);
     };
 
     handleNewPostsFormSubmit = (e) => {
         e.preventDefault();
-        console.log("userId " + this.state.userId)
-        // API Call goes here
+        console.log()
+        let newPost;        
+        let reqcategory = this.state.category;
+        let reqlocation = this.state.location;
+        let reqdescription = this.state.description;
+        let reqcontactNo = this.state.contactNo;
+        let reqprice = this.state.price;
+        let reqexpiryDate = this.state.expiryDate;
+        let requserId = '5c89b8c935a71203a483b6f4';
+        newPost = {
+            category:reqcategory,
+            location:reqlocation,
+            description:reqdescription,
+            contactNo:reqcontactNo,
+            price: reqprice,
+            expiryDate: reqexpiryDate,
+            userId: requserId
+        }
+        console.log(newPost);
+        API.savePost(newPost).then(res => {
+            if (res.data.status === "error") {
+              throw new Error(res.data.message);
+            }
+            console.log("Post Saved successfully:");
+            console.log(res.data);
+      
+            
+      
+          });
     };
 
     render() {
