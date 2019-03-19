@@ -28,13 +28,12 @@ export default class Makepost extends Component {
         this.setState({
             [name]: value
         });
-       // console.log(this.state.results);
+        // console.log(this.state.results);
     };
 
     handleNewPostsFormSubmit = (e) => {
         e.preventDefault();
-        console.log()
-        let newPost;        
+        let newPost;
         let reqcategory = this.state.category;
         let reqlocation = this.state.location;
         let reqdescription = this.state.description;
@@ -43,25 +42,22 @@ export default class Makepost extends Component {
         let reqexpiryDate = this.state.expiryDate;
         let requserId = '5c89b8c935a71203a483b6f4';
         newPost = {
-            category:reqcategory,
-            location:reqlocation,
-            description:reqdescription,
-            contactNo:reqcontactNo,
+            category: reqcategory,
+            location: reqlocation,
+            description: reqdescription,
+            contactNo: reqcontactNo,
             price: reqprice,
             expiryDate: reqexpiryDate,
             userId: requserId
         }
         console.log(newPost);
         API.savePost(newPost).then(res => {
-            if (res.data.status === "error") {
-              throw new Error(res.data.message);
+            if (res.status !== 200) {
+                throw new Error(res.data.message);
             }
-            console.log("Post Saved successfully:");
-            console.log(res.data);
-      
-            
-      
-          });
+            console.log("Post Status: " + res.statusText);
+            console.log(res);
+        });
     };
 
     render() {
@@ -94,10 +90,10 @@ export default class Makepost extends Component {
                                     name="category"
                                     type="text"
                                 >
-                                    <option defaultValue="food">Food</option>
-                                    <option value="services">Services</option>
-                                    <option value="handywork">Handywork</option>
-                                    <option value="babysitting">Babysitting</option>
+                                    <option defaultValue="Food">Food</option>
+                                    <option value="Services">Services</option>
+                                    <option value="Handywork">Handywork</option>
+                                    <option value="Babysitting">Babysitting</option>
                                 </Form.Control>
                             </div>
                             <div className="formItem">
@@ -110,10 +106,10 @@ export default class Makepost extends Component {
                                     name="location"
                                     type="text"
                                 >
-                                    <option defaultValue="stclair">St Clair Station</option>
-                                    <option value="yandbloor">Yonge and Bloor</option>
-                                    <option value="bathurst">Bathurst Station</option>
-                                    <option value="coxwell">Coxwell Station</option>
+                                    <option defaultValue="St Clair Station">St Clair Station</option>
+                                    <option value="Yonge and Bloor">Yonge and Bloor</option>
+                                    <option value="Bathurst Station">Bathurst Station</option>
+                                    <option value="Coxwell Station">Coxwell Station</option>
                                 </Form.Control>
                             </div>
                             <br />

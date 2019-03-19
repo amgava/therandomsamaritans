@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Hometop from "./Hometop";
 import Newuserform from "../../components/Newuserform/Newuserform";
 import Loginform from "../../components/Loginform/Loginform";

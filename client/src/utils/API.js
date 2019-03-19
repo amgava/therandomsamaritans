@@ -7,8 +7,8 @@ export default {
     return axios.get("/api/user", usercheck);
   },
   // Gets the posts with the given Category and Location
-  getPosts: function (category, location) {
-    return axios.get("/api/post" + category + location);
+  getPosts: function (category) {
+    return axios.get("/api/post", category);
   },
   /*// Deletes the pos with the given id
   deleteBook: function(id) {

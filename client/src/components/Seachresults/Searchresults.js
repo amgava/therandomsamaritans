@@ -1,50 +1,21 @@
 import React from "react";
-import API from "../../utils/API";
 import Buybutton from "../Buybutton";
 import { Container } from "../Grid";
 import { List, ListItem } from "../List";
 
-export default class Searchresults extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          results: []
-        };
-    };
-    
-  // componentDidMount() {
-  //   this.loadItems();
-  // }
-
-  loadItems = () => {
-    console.log(this.state.results);
-    API.getPosts()
-      .then(res => this.setState({ results: res.data }))
-      .catch(err => console.log(err));
-  };
-
-  buyItem = (id) => {
-      console.log(id);
-    // API.deleteBook(id)
-    //   .then(res => this.setState({ results: res.data }))
-    //   .catch(err => console.log(err));
-  };
-
-  render() {
+const Searchresults = props => {
     return (
       <span className="searchResultsBox">
       <Container fluid>
-        <span><h2>Search Results: </h2></span>
-            {this.state.results.length ? (
+        <span><h2>Search Results:</h2></span>
+            {props.results.length ? (
               <List>
-                {this.state.results.map(res => (
-                  <ListItem key={res.data._id}>
-                    <a href={"api/users" + res.data._id}>
+                {props.results.map(res => (
+                  <ListItem key={res._id}>
                       <strong>
-                       Id#  {res.data._id} who is {res.data.firstName}
+                       -${res.price}- Description: {res.description}
                       </strong>
-                    </a>
-                    <Buybutton onClick={() => this.buyItem(res.data._id)} />
+                    <Buybutton onClick={() => props.buyitem(res._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -55,4 +26,5 @@ export default class Searchresults extends React.Component {
       </span>
     );
   }
-}
+
+export default Searchresults;
