@@ -34,6 +34,15 @@ function Newuserform(props) {
         />
         <input
           onChange={props.handleInputChange}
+          value={props.confirmpassword}
+          name="confirmpassword"
+          type="text"
+          className="form-control"
+          placeholder="Confirm Password"
+          id="confirmpassword"
+        />
+        <input
+          onChange={props.handleInputChange}
           value={props.email}
           name="email"
           type="text"
@@ -50,15 +59,7 @@ function Newuserform(props) {
           placeholder="Location"
           id="location"
         />
-        <input
-          onChange={props.handleInputChange}
-          value={props.confirmpassword}
-          name="confirmpassword"
-          type="text"
-          className="form-control"
-          placeholder="Confirm Password"
-          id="confirmpassword"
-        />
+        
         <button onClick={props.handleNewUserFormSubmit} className="submitButton">
           Register
         </button>

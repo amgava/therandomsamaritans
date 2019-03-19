@@ -19,10 +19,10 @@ export default class Home extends Component {
             confirmpassword: "",
             currentPage: false,
         };
-        this.resetform = this.resetform.bind(this);
+       // this.resetform = this.resetform.bind(this);
         this.togglepagestate = this.togglepagestate.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleNewUserFormSubmit = this.handleNewUserFormSubmit.bind(this);
+        //this.handleNewUserFormSubmit = this.handleNewUserFormSubmit.bind(this);
         this.handleLoginFormSubmit = this.handleLoginFormSubmit.bind(this);
     }
 
@@ -74,15 +74,21 @@ export default class Home extends Component {
             console.log("handleloginFormSubmit");
             const checkUser = this.state.email;
             const checkPassword = this.state.password;
-            this.checkUserLogin(checkUser,checkPassword);
+
+           // this.setState({ userCheck: [checkUserName, checkPassword] });
+            this.checkUserLogin(checkUserName,checkPassword);
+            this.resetform();
         } else {
             console.log("Please enter both email and password:");
         }
+        
+
     };
 
     checkUserLogin = (email, password) => {
         API.loginUser({"email": email, "password": password})
             .then(res => {
+                console.log(res);
                 if (res.data.status === "error") {
                     console.log("Check your user credentials");
                     throw new Error(res.data.message);
@@ -94,7 +100,7 @@ export default class Home extends Component {
             .catch(err => console.log(err));
          };
 
-        resetform = () => {
+       /* resetform = () => {
             this.setState({
                 firstname: "",
                 lastname: "",
@@ -104,7 +110,7 @@ export default class Home extends Component {
                 confirmpassword: "",
                 userCheck: {}
             });
-        }
+        }*/
 
         renderPage = () => {
             if (this.state.currentPage === false) {
