@@ -71,91 +71,100 @@ export default class Home extends Component {
 
     handleLoginFormSubmit = e => {
         e.preventDefault();
-        const checkUser = {
-            email: this.state.email,
-            password: this.state.password,
+        if ((this.state.email !== "") && (this.state.password !== "")) {
+            console.log("Entered handleloginFormSubmit");
+            const checkUser = {
+                email: this.state.email,
+                password: this.state.password,
+            }
+            this.setState({ userCheck: checkUser });
+            this.checkUserLogin(checkUser);
+        } else {
+            console.log("Please enter email and password:");
         }
-        this.setState({ userCheck: checkUser });
-        this.checkUserLogin();
     };
 
-    checkUserLogin = () => {
-        const isAuth = {
-            email: this.state.email,
-            password: this.state.password,
-        }
-        API.checkUser(isAuth)
+    checkUserLogin = (checkuser) => {
+        API.loginUser(checkuser)
             .then(res => {
-                return <Redirect to={`/landing/${res._id}`} />
+                if (res.data.status === "error") {
+                    console.log("Check your user credentials");
+                    throw new Error(res.data.message);
+
+                }
+                console.log("user Exists and login Successful");
+                console.log(res.data);
+                return <Redirect to={`/landing/${res.data._id}`} />
             })
             .catch(err => console.log(err));
-    };
 
-    resetform = () => {
-        this.setState({
-            firstname: "",
-            lastname: "",
-            email: "",
-            location: "",
-            password: "",
-            confirmpassword: "",
-            userCheck: {}
-        });
-    }
+         };
 
-    renderPage = () => {
-        if (this.state.currentPage === false) {
-            return (
-                <div className="wrapper">
-                    <header className="App-header">
-                        <div className="landingBar">
-                            <p><strong className="landingTitle">Sign Up Now!</strong></p>
+        resetform = () => {
+            this.setState({
+                firstname: "",
+                lastname: "",
+                email: "",
+                location: "",
+                password: "",
+                confirmpassword: "",
+                userCheck: {}
+            });
+        }
+
+        renderPage = () => {
+            if (this.state.currentPage === false) {
+                return (
+                    <div className="wrapper">
+                        <header className="App-header">
+                            <div className="landingBar">
+                                <p><strong className="landingTitle">Sign Up Now!</strong></p>
+                            </div>
+                        </header>
+                        <div className="App-body">
+                            <Hometop togglepagestate={this.togglepagestate} />
+                            <Loginform
+                                email={this.state.email}
+                                password={this.state.password}
+                                handleNewUserFormSubmit={this.handleLoginFormSubmit}
+                                handleInputChange={this.handleInputChange}
+                            />
+                            <Link to={'/landing/testUser'}>  Go To Logged-In Page  </Link>
                         </div>
-                    </header>
-                    <div className="App-body">
-                        <Hometop togglepagestate={this.togglepagestate} />
-                        <Loginform
-                            email={this.state.email}
-                            password={this.state.password}
-                            handleNewUserFormSubmit={this.handleLoginFormSubmit}
-                            handleInputChange={this.handleInputChange}
-                        />
-                        <Link to={'/landing/testUser'}>  Go To Logged-In Page  </Link>
                     </div>
-                </div>
-            );
-        } else {
-            return (
-                <div className="wrapper">
-                    <header className="App-header">
-                        <div className="landingBar">
-                            <p><strong className="landingTitle">Sign Up Now!</strong></p>
+                );
+            } else {
+                return (
+                    <div className="wrapper">
+                        <header className="App-header">
+                            <div className="landingBar">
+                                <p><strong className="landingTitle">Sign Up Now!</strong></p>
+                            </div>
+                        </header>
+                        <div className="App-body">
+                            <Hometop togglepagestate={this.togglepagestate} />
+                            <Newuserform
+                                firstname={this.state.firstname}
+                                lastname={this.state.lastname}
+                                password={this.state.password}
+                                email={this.state.email}
+                                location={this.state.location}
+                                confirmpassword={this.state.confirmpassword}
+                                handleNewUserFormSubmit={this.handleNewUserFormSubmit}
+                                handleInputChange={this.handleInputChange}
+                            />
+                            <Link to={'/landing'}>  Go To Logged-In Page  </Link>
                         </div>
-                    </header>
-                    <div className="App-body">
-                        <Hometop togglepagestate={this.togglepagestate} />
-                        <Newuserform
-                            firstname={this.state.firstname}
-                            lastname={this.state.lastname}
-                            password={this.state.password}
-                            email={this.state.email}
-                            location={this.state.location}
-                            confirmpassword={this.state.confirmpassword}
-                            handleNewUserFormSubmit={this.handleNewUserFormSubmit}
-                            handleInputChange={this.handleInputChange}
-                        />
-                        <Link to={'/landing'}>  Go To Logged-In Page  </Link>
                     </div>
+                );
+            }
+        };
+
+        render() {
+            return (
+                <div className="signupSpacer">
+                    {this.renderPage()}
                 </div>
             );
         }
-    };
-
-    render() {
-        return (
-            <div className="signupSpacer">
-                {this.renderPage()}
-            </div>
-        );
     }
-}
