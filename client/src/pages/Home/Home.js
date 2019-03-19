@@ -18,7 +18,7 @@ export default class Home extends Component {
             password: "",
             confirmpassword: "",
             currentPage: false,
-            userCheck: {}
+            userCheck: []
         };
         this.resetform = this.resetform.bind(this);
         this.togglepagestate = this.togglepagestate.bind(this);
@@ -70,34 +70,30 @@ export default class Home extends Component {
     };
 
     handleLoginFormSubmit = e => {
-        e.preventDefault();
         if ((this.state.email !== "") && (this.state.password !== "")) {
             console.log("Entered handleloginFormSubmit");
-            const checkUser = {
-                email: this.state.email,
-                password: this.state.password,
-            }
-            this.setState({ userCheck: checkUser });
-            this.checkUserLogin(checkUser);
+            const checkUserName = this.state.email;
+            const checkPassword = this.state.password;
+            this.setState({ userCheck: [checkUserName, checkPassword] });
+            this.checkUserLogin(checkUserName, checkPassword);
         } else {
             console.log("Please enter email and password:");
         }
+        e.preventDefault();
     };
 
-    checkUserLogin = (checkuser) => {
-        API.loginUser(checkuser)
+    checkUserLogin = (checkUserName, checkPassword) => {
+        API.loginUser(checkUserName, checkPassword)
             .then(res => {
                 if (res.data.status === "error") {
                     console.log("Check your user credentials");
                     throw new Error(res.data.message);
-
                 }
                 console.log("user Exists and login Successful");
                 console.log(res.data);
                 return <Redirect to={`/landing/${res.data._id}`} />
             })
             .catch(err => console.log(err));
-
          };
 
         resetform = () => {
@@ -118,7 +114,7 @@ export default class Home extends Component {
                     <div className="wrapper">
                         <header className="App-header">
                             <div className="landingBar">
-                                <p><strong className="landingTitle">Sign Up Now!</strong></p>
+                                <p><strong className="landingTitle">Log In Below</strong></p>
                             </div>
                         </header>
                         <div className="App-body">
@@ -126,7 +122,7 @@ export default class Home extends Component {
                             <Loginform
                                 email={this.state.email}
                                 password={this.state.password}
-                                handleNewUserFormSubmit={this.handleLoginFormSubmit}
+                                handleLoginFormSubmit={this.handleLoginFormSubmit}
                                 handleInputChange={this.handleInputChange}
                             />
                             <Link to={'/landing/testUser'}>  Go To Logged-In Page  </Link>
