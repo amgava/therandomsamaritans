@@ -1,5 +1,5 @@
 import React from "react";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 import Buybutton from "../Buybutton";
 import { Container } from "../Grid";
 import { List, ListItem } from "../List";
@@ -12,15 +12,15 @@ export default class Searchresults extends React.Component {
         };
     };
     
-  componentDidMount() {
-    this.loadItems();
-  }
+  // componentDidMount() {
+  //   this.loadItems();
+  // }
 
   loadItems = () => {
     console.log(this.state.results);
-    // API.getBooks()
-    //   .then(res => this.setState({ results: res.data }))
-    //   .catch(err => console.log(err));
+    API.getPosts()
+      .then(res => this.setState({ results: res.data }))
+      .catch(err => console.log(err));
   };
 
   buyItem = (id) => {
@@ -34,17 +34,17 @@ export default class Searchresults extends React.Component {
     return (
       <span className="searchResultsBox">
       <Container fluid>
-        <span><h2>Current Items</h2></span>
+        <span><h2>Search Results: </h2></span>
             {this.state.results.length ? (
               <List>
-                {this.state.results.map(item => (
-                  <ListItem key={item._id}>
-                    <a href={"/books" + item._id}>
+                {this.state.results.map(res => (
+                  <ListItem key={res.data._id}>
+                    <a href={"api/users" + res.data._id}>
                       <strong>
-                        {item.title} by {item.author}
+                       Id#  {res.data._id} who is {res.data.firstName}
                       </strong>
                     </a>
-                    <Buybutton onClick={() => this.buyItem(item._id)} />
+                    <Buybutton onClick={() => this.buyItem(res.data._id)} />
                   </ListItem>
                 ))}
               </List>

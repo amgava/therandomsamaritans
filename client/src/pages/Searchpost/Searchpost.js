@@ -53,7 +53,7 @@ export default class Searchpost extends Component {
                         <div className="formItem">
                             <Form.Label
                                 className="formLabel"
-                            >Categorey</Form.Label>
+                            >Category</Form.Label>
                             <Form.Control as="select" 
                                 onChange={this.handleInputChange}
                                 name="category"
@@ -91,8 +91,8 @@ export default class Searchpost extends Component {
                     <hr className="pageSplit" />
                     <br />
                     <p>Search Results Go Here</p>
-                    <Searchresults />
-                    {/* <img alt="placeholder" src={require('./placeholdersearchresults.png')} /> */}
+                    <Searchresults results={this.state.results}/>
+                    <img alt="placeholder" src={require('./placeholdersearchresults.png')} />
                     <Footer />
                 </div>
             </div>
