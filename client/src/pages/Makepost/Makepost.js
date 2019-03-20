@@ -17,9 +17,20 @@ export default class Makepost extends Component {
             contactNo: { type: String },
             price: { type: Number, default: '0' },
             expiryDate: { type: Date },
+            currentUser: "",
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleNewPostsFormSubmit = this.handleNewPostsFormSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        const getUrl = window.location.href;
+        const parseUrl = getUrl.split("/");
+        const verifyUser = parseUrl[parseUrl.length - 1];
+        if (verifyUser === "landing") {
+            console.log("please log in");
+        } else
+            this.setState({ currentUser: [verifyUser] });
     }
 
     handleInputChange = e => {

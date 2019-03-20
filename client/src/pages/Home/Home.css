@@ -7,6 +7,10 @@
   margin: auto;
 }
 
+.signupform-input {
+  margin: 15px;
+}
+
 .pageToggleButton {
   width: 400px;
   padding: 1vh;
@@ -45,5 +49,6 @@ P.alreadyMember {
   }
 
 input.form-control {
-      margin-left: 15px;
+      padding: 15px;
+      display: inline;
   }
