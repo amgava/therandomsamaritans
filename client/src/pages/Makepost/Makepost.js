@@ -51,7 +51,8 @@ export default class Makepost extends Component {
         let reqcontactNo = this.state.contactNo;
         let reqprice = this.state.price;
         let reqexpiryDate = this.state.expiryDate;
-        let requserId = '5c89b8c935a71203a483b6f4';
+        let requserId = this.state.currentUser;
+        console.log("The current user is"+ requserId);
         newPost = {
             category: reqcategory,
             location: reqlocation,
@@ -59,7 +60,7 @@ export default class Makepost extends Component {
             contactNo: reqcontactNo,
             price: reqprice,
             expiryDate: reqexpiryDate,
-            userId: requserId
+            User: requserId
         }
         console.log(newPost);
         API.savePost(newPost).then(res => {
