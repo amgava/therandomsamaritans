@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Pageswitch from "../../components/Pageswitch/Pageswitch";
 import Searchresults from "../../components/Seachresults/Searchresults";
 import Footer from "../../components/Footer/Footer";
@@ -13,6 +14,7 @@ export default class Searchpost extends Component {
         this.state = {
             category: "",
             location: "",
+            currentUser: "",
             results: []
         };
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -21,7 +23,13 @@ export default class Searchpost extends Component {
     }
 
     componentDidMount() {
-        this.getResults();
+        const getUrl = window.location.href;
+        const parseUrl = getUrl.split("/");
+        const verifyUser = parseUrl[parseUrl.length - 1];
+        if (verifyUser === "landing") {
+            console.log("please log in");
+        } else
+            this.setState({ currentUser: [verifyUser] });
     }
 
     handleInputChange = e => {
@@ -30,25 +38,25 @@ export default class Searchpost extends Component {
         this.setState({
             [name]: value
         });
-       // console.log(this.state.results);
+        // console.log(this.state.results);
     };
 
     handleSearchPostsFormSubmit = (e) => {
         e.preventDefault();
         console.log("Entered handleSearchPostsFormSubmit");
-       // console.log("location" + this.state.location);
+        // console.log("location" + this.state.location);
         const category = this.state.category;
         const location = this.state.location;
         console.log(category);
         console.log(location);
-        this.getResults(category,location);
+        this.getResults(category, location);
     };
 
-    getResults = (category,location) => {
+    getResults = (category, location) => {
         console.log(category);
         console.log(location);
         let getPost = {
-            category : category,
+            category: category,
             location: location
         }
         API.getPosts(getPost)
@@ -114,8 +122,7 @@ export default class Searchpost extends Component {
                     <hr className="pageSplit" />
                     <br />
                     <p>Search Results Go Here</p>
-                    <Searchresults results={this.state.results} buyitem={this.buyItem}/>
-                    {/* <img alt="placeholder" src={require('./placeholdersearchresults.png')} /> */}
+                    <Searchresults results={this.state.results} buyitem={this.buyItem} />
                     <Footer />
                 </div>
             </div>
