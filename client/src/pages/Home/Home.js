@@ -18,6 +18,7 @@ export default class Home extends Component {
             password: "",
             confirmpassword: "",
             currentPage: false,
+            userCheck: []
         };
         this.resetform = this.resetform.bind(this);
         this.togglepagestate = this.togglepagestate.bind(this);
@@ -71,10 +72,9 @@ export default class Home extends Component {
     handleLoginFormSubmit = e => {
         e.preventDefault();
         if ((this.state.email !== "") && (this.state.password !== "")) {
-            console.log("handleloginFormSubmit");
-            const checkUser = this.state.email;
+            console.log("Entered handleloginFormSubmit");
+            const checkUserName = this.state.email;
             const checkPassword = this.state.password;
-
            // this.setState({ userCheck: [checkUserName, checkPassword] });
             this.checkUserLogin(checkUserName,checkPassword);
             this.resetform();
@@ -82,11 +82,17 @@ export default class Home extends Component {
             console.log("Please enter both email and password:");
         }
         
-
     };
 
-    checkUserLogin = (email, password) => {
-        API.loginUser({"email": email, "password": password})
+    checkUserLogin = (username,password) => {
+        console.log(username);
+        console.log(password);
+        let usercheck = {
+            email : username,
+            password: password
+        }
+        console.log(usercheck);
+        API.loginUser(usercheck)
             .then(res => {
                 console.log(res);
                 if (res.data.status === "error") {
