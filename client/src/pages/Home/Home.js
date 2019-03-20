@@ -80,7 +80,7 @@ export default class Home extends Component {
         } else {
             console.log("Please enter both email and password:");
         }
-        
+
     };
 
     checkUserLogin = (username,password) => {

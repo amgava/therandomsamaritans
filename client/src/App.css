@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color:black;
   min-height: 10vh;
   color: white;
   margin: 0px;
@@ -18,7 +18,10 @@
 .App-body {
   margin-top: 5vh;
   text-align: center;
+  background-color: blue;
 }
+
+
 
 .App-footer {
   text-align: center;
@@ -27,11 +30,11 @@
   margin-top: 45px;
   border: 2px;
   border-color: black;
-  background-color: green;
+  /* background-color: green; */
   line-height: 80px;
   }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+} */

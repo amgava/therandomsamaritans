@@ -1,10 +1,10 @@
   ul.App-navbar {
-    border-color: rgb(255, 169, 169);
+    border-color: black;
     border-width: 2px;
     border-style: inset;
     position: sticky;
-    padding: 10px;
-    background-color: #282c34;
+    padding: 50px;
+    background-color: black;
     height: 10vh;
     display: flex;
     flex-direction: row;
@@ -22,8 +22,11 @@
   }
 
   img.logo {
-    width: 50px;
+    width: 200px;
   }
+
+
+  
   
   A:hover.logo { text-decoration: none; }
 

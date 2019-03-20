@@ -10,8 +10,10 @@ export default {
   });
 },
   // Gets the posts with the given Category and Location
-  getPosts: function (category) {
-    return axios.get("/api/post", category);
+  getPosts: function (getPost) {
+    return axios.get("/api/post",{
+      params: getPost
+    });
   },
   /*// Deletes the pos with the given id
   deleteBook: function(id) {
