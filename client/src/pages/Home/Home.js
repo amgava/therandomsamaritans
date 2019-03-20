@@ -81,7 +81,7 @@ export default class Home extends Component {
         } else {
             console.log("Please enter both email and password:");
         }
-        
+
     };
 
     checkUserLogin = (username,password) => {
@@ -159,7 +159,7 @@ export default class Home extends Component {
                                 handleNewUserFormSubmit={this.handleNewUserFormSubmit}
                                 handleInputChange={this.handleInputChange}
                             />
-                            <Link to={'/landing'}>  Go To Logged-In Page  </Link>
+                            <Link to={'/landing/testUser'}>  Go To Logged-In Page  </Link>
                         </div>
                     </div>
                 );
