@@ -4,7 +4,6 @@ import Hometop from "./Hometop";
 import Newuserform from "../../components/Newuserform/Newuserform";
 import Loginform from "../../components/Loginform/Loginform";
 import API from "../../utils/API";
-
 import "./Home.css";
 
 export default class Home extends Component {
@@ -159,7 +158,7 @@ export default class Home extends Component {
                                 handleNewUserFormSubmit={this.handleNewUserFormSubmit}
                                 handleInputChange={this.handleInputChange}
                             />
-                            <Link to={'/landing'}>  Go To Logged-In Page  </Link>
+                            <Link to={'/landing/testUser'}>  Go To Logged-In Page  </Link>
                         </div>
                     </div>
                 );

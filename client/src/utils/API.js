@@ -9,7 +9,6 @@ export default {
       params: usercheck
   });
 },
-
   // Gets the posts with the given Category and Location
   getPosts: function (category) {
     return axios.get("/api/post", category);
