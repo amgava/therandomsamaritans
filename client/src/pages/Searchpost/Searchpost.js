@@ -30,18 +30,28 @@ export default class Searchpost extends Component {
         this.setState({
             [name]: value
         });
-        console.log(this.state.results);
+       // console.log(this.state.results);
     };
 
     handleSearchPostsFormSubmit = (e) => {
         e.preventDefault();
-        console.log("category " + this.state.category)
+        console.log("Entered handleSearchPostsFormSubmit");
+       // console.log("location" + this.state.location);
         const category = this.state.category;
-        this.getResults(category);
+        const location = this.state.location;
+        console.log(category);
+        console.log(location);
+        this.getResults(category,location);
     };
 
-    getResults = (category) => {
-        API.getPosts(category)
+    getResults = (category,location) => {
+        console.log(category);
+        console.log(location);
+        let getPost = {
+            category : category,
+            location: location
+        }
+        API.getPosts(getPost)
             .then(res => this.setState({ results: res.data }))
             .catch(err => console.log(err));
     };
@@ -70,7 +80,8 @@ export default class Searchpost extends Component {
                                 name="category"
                                 type="text"
                                 id="category">
-                                <option defaultValue="Food">Food</option>
+                                <option defaultValue="Select">Select</option>
+                                <option value="Food">Food</option>
                                 <option value="Services">Services</option>
                                 <option value="Handywork">Handywork</option>
                                 <option value="Babysitting">Babysitting</option>
@@ -85,6 +96,7 @@ export default class Searchpost extends Component {
                                 name="location"
                                 type="text"
                                 id="location">
+                                <option defaultValue="Select">Select</option>
                                 <option defaultValue="St Clair Station">St Clair Station</option>
                                 <option value="Yonge and Bloor">Yonge and Bloor</option>
                                 <option value="Bathurst Station">Bathurst Station</option>

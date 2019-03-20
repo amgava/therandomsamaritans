@@ -90,6 +90,7 @@ export default class Makepost extends Component {
                                     name="category"
                                     type="text"
                                 >
+                                    <option defaultValue="Select">Select</option>
                                     <option defaultValue="Food">Food</option>
                                     <option value="Services">Services</option>
                                     <option value="Handywork">Handywork</option>
@@ -106,6 +107,7 @@ export default class Makepost extends Component {
                                     name="location"
                                     type="text"
                                 >
+                                    <option defaultValue="Select">Select</option>
                                     <option defaultValue="St Clair Station">St Clair Station</option>
                                     <option value="Yonge and Bloor">Yonge and Bloor</option>
                                     <option value="Bathurst Station">Bathurst Station</option>
