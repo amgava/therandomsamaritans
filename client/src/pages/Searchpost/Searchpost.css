@@ -1,20 +1,13 @@
-
-.formLabel {
-    display: inline-flex;  
-    float: left;
-    padding-right: 25px;
-    padding-left: 25px;
+.searchInputForm {
+    display: inline-block;
+    padding: 5px;
+    margin: 12px;
 }
 
 .formItem {
-    display: flex;
-    padding-right: 25px;
-    padding-left: 25px;
-    float: left;
+    margin-right: 25px;
 }
 
-.pageSplit {
-    border-width: 30px;
-    margin-top: 8vh;
-    width: 100%;
+.formLabel {
+    margin-right: 25px;
 }

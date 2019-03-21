@@ -1,13 +1,10 @@
 .pageSwitchBar {
-    text-align: center;
-    padding: 25px;
-    margin: 0px;
     display: inline-block;
-    width: 100%;
+    padding: 25px;
+    margin: 25px;
 }
 
 A.pageToggle {
     color: white;
-    padding: 25px;
-    margin: 25px;
+    text-decoration: none;
 }

@@ -38,7 +38,6 @@ export default class Searchpost extends Component {
         this.setState({
             [name]: value
         });
-        // console.log(this.state.results);
     };
 
     handleSearchPostsFormSubmit = (e) => {
@@ -81,9 +80,7 @@ export default class Searchpost extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <Pageswitch />
-                </header>
-                <div className="App-body">
-                    <Form>
+                    <Form className="searchInputForm">
                         <div className="formItem">
                             <Form.Label
                                 className="formLabel"
@@ -119,16 +116,15 @@ export default class Searchpost extends Component {
                         <div className="formItem">
                             <Button variant="primary"
                                 onClick={this.handleSearchPostsFormSubmit} >
-                                Search Stuff
+                                Submit Search
                             </Button>
                         </div>
                     </Form>
-                    <br />
-                    <hr className="pageSplit" />
-                    <br />
+                </header>
+                <div className="App-body">
                     <Searchresults results={this.state.results} buyitem={this.buyItem} />
-                    <Footer />
                 </div>
+                <Footer />
             </div>
         );
     }
