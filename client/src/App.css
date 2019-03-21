@@ -3,8 +3,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 10s ease-in-out;
-  height: 60px;
+  max-height: 15px;
 }
 
 .App-header {
@@ -14,12 +13,16 @@
   margin: 0px;
   padding-top: 25px;
   padding: 50px;
+  display: inline;
+
 }
 
 .App-body {
-  margin-top: 5vh;
   text-align: center;
-  /* background-color: white; */
+  background-color: blue;
+  min-height: 50vh;
+  width: 100%;
+  display: inline-block;
 }
 
 
@@ -27,15 +30,12 @@
 .App-footer {
   text-align: center;
   font-size: 25px;
-  min-height: 10vh;
-  margin-top: 45px;
-  border: 2px;
+  min-height: 20vh;
+  display: inline-block;
+  width: 100%;
+  border: 8px;
   border-color: black;
   background-color:black; 
-  line-height: 80px;
+  color: purple;
+  line-height: 140px;
   }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} 

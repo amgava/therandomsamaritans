@@ -12,14 +12,10 @@ module.exports = {
 
   findOne: function(req, res) {
     console.log(req.query);
-    
     db.User
     .findOne({email : req.query.email, password : req.query.password })
     .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  
-      
-
   },
   findById: function (req, res) {
     db.User

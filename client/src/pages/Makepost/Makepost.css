@@ -26,3 +26,7 @@
     font-weight: bolder;
 }
 
+#price, #date, #contactNo {
+margin: auto;
+}
+

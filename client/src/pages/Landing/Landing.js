@@ -1,51 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
+import Mybuys from "../../components/Mybuys/Mybuys";
+import Myposts from "../../components/Myposts/Myposts";
+import Login from "../../pages/Login/Login";
 import "./Landing.css";
 
-export default class Landing extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentUser: "",
-        };
-    }
-
-    componentDidMount() {
-        const getUrl = window.location.href;
-        const parseUrl = getUrl.split("/");
-        const verifyUser = parseUrl[parseUrl.length - 1];
-        if(verifyUser === "landing") {
-            console.log("please log in");
-        } else 
-        this.setState({ currentUser: [verifyUser] });
-    }
-
-    componentDidUpdate() {
-        console.log(this.state.currentUser);
-    }
-
-    checkForLogin = () => {
-        if (this.state.currentUser === "2") return (<div className="App-body"><Link to={'/'}>Please log in!</Link></div>)
-        else
-            return (
-                <div className="wrapper">
-                    <header className="App-header">
-                        <div className="landingBar">
-                            <strong className="landingTitle">The Landing Page!</strong>
-                        </div>
-                    </header>
-                    <div className="App-body">
-                        <Link to={'/searchpost'}>Search Items</Link>
-                        <strong>   Choose what to do first   </strong>
-                        <Link to={'/makepost'}>Create Post</Link>
-                    </div>
-                    <Footer />
+function Landing(props) {
+    console.log("this is landing props " + Object.values(props));
+    if (props.currentuser !== "") {
+        return (<div className="wrapper">
+            <header className="App-header">
+                <div className="landingBar">
                 </div>
-            );
-    }
-
-    render() {
-        return this.checkForLogin();
+            </header>
+            <div className="App-body">
+                <div className="landingBody">
+                    <strong className="landingTitle">Welcome To Comet!</strong>
+                    <br /> <br />
+                    <div className="landingChoice">
+                        <Link to={`/searchpost/${props.currentuser}`}>Search Items</Link>
+                        <strong>   Choose what to do first   </strong>
+                        <Link to={`/makepost/${props.currentuser}`}>Create Post</Link>
+                    </div>
+                    <div className="landingInfo">
+                        <Myposts activeposts={props.activeposts} />
+                        <Mybuys activebuys={props.activebuys} />
+                    </div>
+                </div>
+            </div>
+            <Footer />
+        </div>)
+    } else {
+        return <Login />;
     }
 }
+
+export default Landing;
