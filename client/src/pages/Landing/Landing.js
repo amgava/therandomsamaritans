@@ -22,6 +22,7 @@ function Landing(props) {
                 {/* <Mybuys mybuys={props.mybuys} />
                 <Myposts myposts={props.myposts} /> */}
                 </div>
+                
                 <Footer />
             </div>)
         } else {
