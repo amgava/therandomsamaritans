@@ -3,7 +3,7 @@ import "./Buybutton.css";
 
 function Buybutton(props) {
   return (
-    <span className="btn buy-btn" role="button" onClick={() => props.buyitem(props._id)} tabIndex="0" />
+    <button className="btn btn-primary m-2" role="button" onClick={() => props.buyitem(props._id)} >Buy Now</button>
   );
 }
 
