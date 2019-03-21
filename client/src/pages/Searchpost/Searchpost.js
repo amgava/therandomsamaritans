@@ -47,7 +47,7 @@ export default class Searchpost extends Component {
         const category = this.state.category;
         const location = this.state.location;
         const User = this.state.currentUser;
-        const UserId = User[0];
+        const UserId = User;
         console.log(category);
         console.log(location);
         console.log(UserId);
@@ -60,7 +60,7 @@ export default class Searchpost extends Component {
         let getPost = {
             category: category,
             location: location,
-           // User: UserId
+            User: UserId
 
         }
         API.getPosts(getPost)
