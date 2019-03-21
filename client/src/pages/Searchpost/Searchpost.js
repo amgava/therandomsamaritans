@@ -14,7 +14,8 @@ export default class Searchpost extends Component {
             category: "",
             location: "",
             currentUser: "",
-            results: []
+            results: [],
+           // TempResults: []
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSearchPostsFormSubmit = this.handleSearchPostsFormSubmit.bind(this);
@@ -44,30 +45,34 @@ export default class Searchpost extends Component {
         console.log("Entered handleSearchPostsFormSubmit");
         const category = this.state.category;
         const location = this.state.location;
-        const buyerId = this.state.currentUser;
+        const User = this.state.currentUser;
+        const UserId = User;
         console.log(category);
         console.log(location);
-        console.log(buyerId);
-        this.getResults(category, location);
+        console.log(UserId);
+        this.getResults(category, location, UserId);
     };
 
-    getResults = (category, location) => {
+    getResults = (category, location, UserId) => {
         console.log(category);
         console.log(location);
         let getPost = {
             category: category,
-            location: location
+            location: location,
+            User: UserId
+
         }
         API.getPosts(getPost)
             .then(res => this.setState({ results: res.data }))
             .catch(err => console.log(err));
+           
     };
 
     buyItem = (id) => {
         console.log(id);
         API.updatePost(id)
-          .then(res => this.setState({ results: res.data }))
-          .catch(err => console.log(err));
+            .then(res => this.setState({ results: res.data }))
+            .catch(err => console.log(err));
     };
 
     render() {
@@ -111,7 +116,7 @@ export default class Searchpost extends Component {
                         <div className="formItem">
                             <Button variant="primary"
                                 onClick={this.handleSearchPostsFormSubmit} >
-                                Search Stuff
+                                Submit Search
                             </Button>
                         </div>
                     </Form>

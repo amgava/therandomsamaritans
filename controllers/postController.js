@@ -1,19 +1,24 @@
 const db = require("../models");
+const moment = require('moment');
+const today = moment().startOf('day');
+const date = new Date(today.toDate());
+console.log(date);
 
 // Defining methods for the postController
 module.exports = {
   findAll: function(req, res) {
-  console.log(req.query);
+  let userid = req.query.User;
+  console.log(userid);
     db.Post
-      .find(req.query)
+      .find({$and:[{category:req.query.category},{expiryDate:{$gte:date}},{location:req.query.location},{User:{$ne:userid}}]})   
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-   // console.log(req.params.id);
+    console.log(req.params.id);
     db.Post
-      .find({User:req.params.id})
+      .find({$and:[{User:req.params.id},{expiryDate:{$gte:date}}]})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
