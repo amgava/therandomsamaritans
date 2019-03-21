@@ -1,13 +1,9 @@
   ul.App-navbar {
-    border-color: black;
-    border-width: 2px;
     border-style: inset;
-    position: sticky;
-    padding: 50px;
+    padding: 15px;
+    position: static;
     background-color: black;
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
+    min-height: 20vh;
     font-size: calc(12px + 2vmin);
     color: white;
     text-transform: uppercase;
@@ -17,12 +13,13 @@
     list-style-type: none;
     margin-left: 5px;
     margin-right: 5px;
-    padding: 20px;
-    font-size: calc(8px + 2vmin);
+    display: inline-flex;
+    position: inherit;
+    font-size: calc(16px + 2vmin);
   }
 
   img.logo {
-    width: 150px;
+    width: 100px;
     background-color: white;
   }
   
@@ -34,4 +31,4 @@
 
   A:active.menuLink { text-decoration: none; }
 
-  A:hover.menuLink { color: black; text-decoration: none; background-color: rgb(197, 197, 197); border-radius: calc(8px + 2vmin); border-color: black; border-width: 1px; }
+  A:hover.menuLink { color: violet; text-decoration: none; }

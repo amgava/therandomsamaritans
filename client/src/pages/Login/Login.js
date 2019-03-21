@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Loginform from "../../components/Loginform/Loginform";
 import Landing from "../../pages/Landing/Landing";
 import API from "../../utils/API";
@@ -126,7 +127,9 @@ export default class Login extends Component {
                 <div className="wrapper">
                     <header className="App-header">
                         <div className="landingBar">
-                            <p><strong className="landingTitle">Log In Below</strong></p>
+                            <p><strong className="landingTitle">Welcome Back</strong></p>
+                            <p><strong className="homeTitles">Need To Register?</strong><br />
+                        <Link to={'/'}><strong>Create Account</strong></Link></p>
                         </div>
                     </header>
                     <div className="App-body">

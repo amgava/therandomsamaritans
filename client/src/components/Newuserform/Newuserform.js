@@ -3,7 +3,7 @@ import "../../pages/Home/Home.css";
 
 function Newuserform(props) {
   return (
-    <form className="sign-up-form">
+    <form className="signupSpacer">
       <div className="signupform-input">
         <input
           onChange={props.handleInputChange}

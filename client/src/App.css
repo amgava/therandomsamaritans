@@ -2,19 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  max-height: 15px;
-}
-
 .App-header {
-  background-color:black;
-  min-height: 20vh;
   color: white;
-  margin: 0px;
-  padding-top: 25px;
-  padding: 50px;
+  margin: auto;
   display: inline;
-
 }
 
 .App-body {
@@ -24,8 +15,6 @@
   width: 100%;
   display: inline-block;
 }
-
-
 
 .App-footer {
   text-align: center;
