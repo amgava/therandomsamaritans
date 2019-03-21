@@ -1,0 +1,10 @@
+.modal-btn {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.modal-body {
+    background-color: rgb(0, 113, 188);
+}

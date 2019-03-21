@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'IBM Plex Serif';
+  src: local('IBM Plex Serif Regular'), url(./fonts/IBM_Plex_Serif/IBMPlexSerif-Regular.ttf) format('truetype');
+}
+
 .App {
   text-align: center;
 }
@@ -31,7 +36,11 @@
   line-height: 80px;
   }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+} */
+
+body {
+  font-family: 'IBM Plex Serif', serif;
 }
