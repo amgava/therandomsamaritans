@@ -111,7 +111,7 @@ export default class Searchpost extends Component {
                         <div className="formItem">
                             <Button variant="primary"
                                 onClick={this.handleSearchPostsFormSubmit} >
-                                Search Stuff
+                                Submit Search
                             </Button>
                         </div>
                     </Form>
