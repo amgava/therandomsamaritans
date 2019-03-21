@@ -1,6 +1,7 @@
 .searchInputForm {
-    padding: 25px;
-    display: inline;
+    display: inline-block;
+    padding: 5px;
+    margin: 12px;
 }
 
 .formItem {

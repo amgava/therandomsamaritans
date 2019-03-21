@@ -4,7 +4,8 @@
 
 .App-header {
   color: white;
-  display: inline-block;
+  display: inline;
+  text-align: center;
   padding: 25px;
 }
 

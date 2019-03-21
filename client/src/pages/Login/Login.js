@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Loginform from "../../components/Loginform/Loginform";
 import Landing from "../../pages/Landing/Landing";
 import API from "../../utils/API";
-import "../Home/Home.css";
+import "./Login.css";
 
 export default class Login extends Component {
     constructor(props) {
@@ -13,8 +13,8 @@ export default class Login extends Component {
             password: "",
             currentUser: "",
             auth: false,
-            activePost:[],
-            activeBuys:[]
+            activePost: [],
+            activeBuys: []
         };
         this.resetform = this.resetform.bind(this);
         this.getActivePosts = this.getActivePosts.bind(this);
@@ -69,7 +69,7 @@ export default class Login extends Component {
                 let currUser = this.state.currentUser;
                 console.log("Current user is " + currUser);
                 this.getActivePosts(currUser);
-                
+
             })
             .catch(err => console.log(err));
     }
@@ -103,7 +103,7 @@ export default class Login extends Component {
                 }
                 console.log("Active buys exist for user");
                 console.log(res.data);
-                this.setState({activeBuys:res.data});
+                this.setState({ activeBuys: res.data });
                 console.log(this.state.activeBuys);
             })
             .catch(err => console.log(err));
@@ -127,9 +127,9 @@ export default class Login extends Component {
                 <div className="wrapper">
                     <header className="App-header">
                         <div className="landingBar">
-                            <p><strong className="landingTitle">Welcome Back</strong></p>
-                            <p><strong className="homeTitles">Need To Register?</strong><br />
-                        <Link to={'/'}><strong>Create Account</strong></Link></p>
+                            <strong className="landingTitle">Welcome Back</strong><br />
+                            <strong className="homeTitles">Need To Register?</strong><br />
+                            <Link to={'/'}><strong>Create Account</strong></Link>
                         </div>
                     </header>
                     <div className="App-body">
@@ -143,7 +143,7 @@ export default class Login extends Component {
                 </div>
             );
         } else {
-            return (<Landing currentuser={this.state.currentUser} activeposts={this.state.activePost} activebuys={this.state.activeBuys}/>);
+            return (<Landing currentuser={this.state.currentUser} activeposts={this.state.activePost} activebuys={this.state.activeBuys} />);
         }
     };
 
