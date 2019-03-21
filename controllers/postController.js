@@ -3,8 +3,10 @@ const db = require("../models");
 // Defining methods for the postController
 module.exports = {
   findAll: function(req, res) {
-  console.log(req.query);
+  //let userid = req.query.User;
+  //console.log(userid);
     db.Post
+      //.find({$and:[{category:req.query.category},{location:req.query.location},//  {User:{$not:{userid}}}]})        
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
