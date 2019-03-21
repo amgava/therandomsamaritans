@@ -12,10 +12,12 @@ export default class Login extends Component {
             password: "",
             currentUser: "",
             auth: false,
-            activePost: [],
+            activePost:[],
             activeBuys:[]
         };
         this.resetform = this.resetform.bind(this);
+        this.getActivePosts = this.getActivePosts.bind(this);
+        this.getActiveBuys = this.getActiveBuys.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleLoginFormSubmit = this.handleLoginFormSubmit.bind(this);
     }
@@ -60,9 +62,11 @@ export default class Login extends Component {
                 }
                 console.log("user Exists and login Successful");
                 console.log(res.data);
-                this.setState({ auth: true, currentUser: res.data._id });
+                this.setState({ auth: true, currentUser: res.data._id })
+            })
+            .then(() => {
                 let currUser = this.state.currentUser;
-                console.log("Current user is "+ currUser);
+                console.log("Current user is " + currUser);
                 this.getActivePosts(currUser);
                 
             })
@@ -80,7 +84,7 @@ export default class Login extends Component {
                 }
                 console.log("Active posts exist for user");
                 console.log(res.data);
-                this.setState({activePost:res.data});
+                this.setState({ activePost: res.data });
                 console.log(this.state.activePost);
                 this.getActiveBuys(currUser);
             })
@@ -136,21 +140,9 @@ export default class Login extends Component {
                 </div>
             );
         } else {
-            return (
-                <div className="wrapper">
-                    <header className="App-header">
-                        <div className="landingBar">
-                            <p><strong className="landingTitle">Log In Below</strong></p>
-                        </div>
-                    </header>
-                    <div className="App-body">
-                        <Landing currentuser={this.state.currentUser} />
-                    </div>
-                </div>
-            );
+            return (<Landing currentuser={this.state.currentUser} activeposts={this.state.activePost} activebuys={this.state.activeBuys}/>);
         }
     };
-
 
     render() {
         return this.renderPage();

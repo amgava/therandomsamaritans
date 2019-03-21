@@ -8,6 +8,25 @@
     font-size: 4vh;
     margin-left: 25px;
     margin-right: 25px;
+    display: inline-block;
+    text-align: center;
+}
+
+.landingChoice {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: white;
+    padding: 25px;
+    min-height: 8vh;
+}
+
+.landingBody {
+    font-size: 18px;
+}
+
+.landingInfo {
+    display: inline;
 }
 
 

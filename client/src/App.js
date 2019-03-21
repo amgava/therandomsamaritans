@@ -16,6 +16,7 @@ function App() {
         <Navbar />
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/landing" component={Landing} />
         <Route path="/makepost" component={Makepost} />
         <Route path="/searchpost" component={Searchpost} />
         <Route path="/contact" component={Contact} />
