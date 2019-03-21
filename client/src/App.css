@@ -9,16 +9,17 @@
 
 .App-header {
   background-color:black;
-  min-height: 10vh;
+  min-height: 20vh;
   color: white;
   margin: 0px;
   padding-top: 25px;
+  padding: 50px;
 }
 
 .App-body {
   margin-top: 5vh;
   text-align: center;
-  background-color: blue;
+  /* background-color: white; */
 }
 
 
@@ -30,11 +31,11 @@
   margin-top: 45px;
   border: 2px;
   border-color: black;
-  /* background-color: green; */
+  background-color:black; 
   line-height: 80px;
   }
 
-/* @keyframes App-logo-spin {
+@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-} */
+} 

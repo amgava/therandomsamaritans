@@ -11,12 +11,19 @@
   width: 400px;
   padding: 1vh;
   margin-bottom: 15px;
+  background-color: rgb(19, 203, 228);
+  color: white;
+  padding: 14px 40px;
+  border: 2px solid white;
+  border-radius: 12px;
+  
 }
 
 .signupSpacer {
     width: 80%;
     padding: 5vh;
-    background-color: aliceblue;
+     background-color: white; 
+     border-radius: 12px;
     text-align: justify;
     margin-left: auto;
     margin-right: auto;
@@ -25,6 +32,12 @@
 
 button.submitButton {
   margin: 2vh;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgb(19, 203, 228);
+  color: white;
+  padding: 14px 40px;
+  border: 2px solid white;
 }
 
 .signupBody {
@@ -46,4 +59,8 @@ P.alreadyMember {
 
 input.form-control {
       margin-left: 15px;
+      border: 2px solid rgb(19, 203, 228);
+      
+      margin-bottom:4px;
+
   }
