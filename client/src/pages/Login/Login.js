@@ -12,10 +12,12 @@ export default class Login extends Component {
             password: "",
             currentUser: "",
             auth: false,
-            activePost: [],
+            activePost:[],
             activeBuys:[]
         };
         this.resetform = this.resetform.bind(this);
+        this.getActivePosts = this.getActivePosts.bind(this);
+        this.getActiveBuys = this.getActiveBuys.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleLoginFormSubmit = this.handleLoginFormSubmit.bind(this);
     }
@@ -106,27 +108,6 @@ export default class Login extends Component {
             .catch(err => console.log(err));
     }
 
-    // getActiveBuys = (currUser) => {
-    //     console.log(currUser);
-    //     API.getUserBuys(currUser)
-    //         .then(res => {
-    //             if (res.data.status === "error") {
-    //                 alert("No active buys for the user");
-    //                 throw new Error(res.data.message);
-    //             }
-    //             if (res.data.buyerId === currUser) {
-    //                 const pushBuys = [];
-    //                 res.data.push(pushBuys);
-    //                 this.setState({activeBuy: pushBuys});
-    //             }
-    //             console.log("Active buys exist for user");
-    //             console.log(res.data);
-    //             this.setState({activePost:res.data});
-    //             console.log(this.state.activePost);
-    //         })
-    //         .catch(err => console.log(err));
-    // }
-
     resetform = () => {
         this.setState({
             firstname: "",
@@ -159,7 +140,7 @@ export default class Login extends Component {
                 </div>
             );
         } else {
-            return (<Landing currentuser={this.state.currentUser} activeposts={this.state.activePost} />);
+            return (<Landing currentuser={this.state.currentUser} activeposts={this.state.activePost} activebuys={this.state.activeBuys}/>);
         }
     };
 

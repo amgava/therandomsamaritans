@@ -2,16 +2,16 @@ import React from "react";
 import { Container } from "../Grid";
 import Buybutton from "../Buybutton/Buybutton";
 import { List, ListItem } from "../List";
+import "./Mybuys.css";
 
 const Mybuys = props => {
   console.log("this is mybuys props" + props);
     return (
-      <span className="myBuysBox">
-      <Container fluid>
-        <span><h2>My Current Purchases:</h2></span>
-            {props.mybuys.length ? (
+      <Container id="myBuysBox">
+        <span><h3 className="alert-primary p-2">Thing I Am Buying</h3></span>
+            {props.activebuys.length ? (
               <List>
-                {props.mybuys.map(res => (
+                {props.activebuys.map(res => (
                   <ListItem key={res._id}>
                       <strong>{res.description}</strong>
                     <Buybutton onClick={() => props.buyitem(res._id)} />
@@ -22,7 +22,6 @@ const Mybuys = props => {
               <h3>No Results to Display</h3>
             )}
       </Container>
-      </span>
     );
   }
 

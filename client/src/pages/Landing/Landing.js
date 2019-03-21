@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
-// import Mybuys from "../../components/Mybuys/Mybuys";
+import Mybuys from "../../components/Mybuys/Mybuys";
 import Myposts from "../../components/Myposts/Myposts";
 import Login from "../../pages/Login/Login";
 import "./Landing.css";
@@ -25,7 +25,7 @@ function Landing(props) {
                     </div>
                     <div className="landingInfo">
                         <Myposts activeposts={props.activeposts} />
-                        <Myposts activeposts={props.activeposts} />
+                        <Mybuys activebuys={props.activebuys} />
                     </div>
                 </div>
             </div>
