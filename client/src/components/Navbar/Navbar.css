@@ -2,11 +2,12 @@
     border-style: inset;
     padding: 15px;
     position: static;
-    background-color: black;
+    background-color:#3B3E96;
     min-height: 20vh;
     font-size: calc(12px + 2vmin);
     color: white;
     text-transform: uppercase;
+    border: none;
   }
 
   li.menuLink {

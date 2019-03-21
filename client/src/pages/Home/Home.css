@@ -9,6 +9,7 @@
 
 .signupform-input {
   margin: 25px;
+  
 }
 
 .pageToggleButton {
@@ -38,7 +39,7 @@ button.submitButton {
   margin: 2vh;
   padding: 20px;
   border-radius: 12px;
-  background-color: rgb(19, 203, 228);
+  background-color: #03B5AC;
   color: white;
   padding: 14px 40px;
   border: 2px solid white;
@@ -63,9 +64,12 @@ P.alreadyMember {
 
 input.form-control {
       margin-left: 15px;
+      background-color:rgba(19, 203, 228,0.2);
       border: 2px solid rgb(19, 203, 228);
       padding: 15px;
       display: inline-block;
+      margin-bottom: 6px;
+      border: none;
   }
 
   .homeTitles {
