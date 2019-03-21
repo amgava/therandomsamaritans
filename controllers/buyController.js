@@ -3,7 +3,7 @@ const moment = require('moment');
 const today = moment().startOf('day');
 const date = new Date(today.toDate());
 console.log(date);
-// Defining methods for the postController
+// Defining methods for the buyController
 module.exports = {
   findAll: function(req, res) {
   console.log(req.params.id);
