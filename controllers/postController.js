@@ -16,7 +16,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-   // console.log(req.params.id);
+    console.log(req.params.id);
     db.Post
       .find({$and:[{User:req.params.id},{expiryDate:{$gte:date}}]})
       .then(dbModel => res.json(dbModel))
