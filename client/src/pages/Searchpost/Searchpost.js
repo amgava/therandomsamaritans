@@ -37,7 +37,6 @@ export default class Searchpost extends Component {
         this.setState({
             [name]: value
         });
-        // console.log(this.state.results);
     };
 
     handleSearchPostsFormSubmit = (e) => {
