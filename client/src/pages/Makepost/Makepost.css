@@ -8,8 +8,7 @@
 }
 
 .formItem {
-    display: inline-flex;
-    float: left;
+    display: inline-block;
 }
 
 .descriptionBox {

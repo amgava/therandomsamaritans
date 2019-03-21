@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Pageswitch from "../../components/Pageswitch/Pageswitch";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import Footer from "../../components/Footer/Footer";
 import API from "../../utils/API";
 import "./Makepost.css";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
 export default class Makepost extends Component {
     constructor(props) {
@@ -76,12 +76,12 @@ export default class Makepost extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <Pageswitch />
+                    <Form className="searchInputForm" />
                 </header>
                 <div className="App-body">
                     <div className="makePostPageBox">
                         <Form className="clearfix">
                             <h2>Post New Item</h2>
-                            
                             <div className="formItem">
                                 <Form.Label
                                     className="formLabel">

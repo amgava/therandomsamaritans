@@ -76,9 +76,7 @@ export default class Searchpost extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <Pageswitch />
-                </header>
-                <div className="App-body">
-                    <Form>
+                    <Form className="searchInputForm">
                         <div className="formItem">
                             <Form.Label
                                 className="formLabel"
@@ -118,9 +116,8 @@ export default class Searchpost extends Component {
                             </Button>
                         </div>
                     </Form>
-                    <br />
-                    <hr className="pageSplit" />
-                    <br />
+                </header>
+                <div className="App-body">
                     <Searchresults results={this.state.results} buyitem={this.buyItem} />
                 </div>
                 <Footer />
