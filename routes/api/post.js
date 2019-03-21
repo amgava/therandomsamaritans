@@ -7,10 +7,10 @@ router.route("/")
   .post(postController.create);
 
 // Matches with "/api/posts/:id"
-//router
+router
  // .route("/:category")
  // .get(postController.findByCat)
- // .put(postController.update)
+ .put(postController.update)
  // .delete(postController.remove);
 
 module.exports = router;

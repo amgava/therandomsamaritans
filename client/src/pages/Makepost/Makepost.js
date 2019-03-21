@@ -83,16 +83,6 @@ export default class Makepost extends Component {
                         <Form className="clearfix">
                             <h2>Post New Item</h2>
                             <div className="formItem">
-                                <Form.Control
-                                    id="userId"
-                                    onChange={this.handleInputChange}
-                                    name="userId"
-                                    type="text"
-                                    value={this.state.userId}
-                                    className="hiddenValue"
-                                />
-                            </div>
-                            <div className="formItem">
                                 <Form.Label
                                     className="formLabel">
                                     Categorey</Form.Label>

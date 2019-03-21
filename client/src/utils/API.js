@@ -15,10 +15,10 @@ export default {
       params: getPost
     });
   },
-  /*// Deletes the pos with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
-  },*/
+  //  Deletes the pos with the given id
+  updatePost: function(id) {
+    return axios.put("/api/post/" + id);
+  },
   // Saves a post to the database
   savePost: function (postData) {
     return axios.post("/api/post", postData);

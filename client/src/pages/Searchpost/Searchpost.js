@@ -43,7 +43,6 @@ export default class Searchpost extends Component {
     handleSearchPostsFormSubmit = (e) => {
         e.preventDefault();
         console.log("Entered handleSearchPostsFormSubmit");
-        // console.log("location" + this.state.location);
         const category = this.state.category;
         const location = this.state.location;
         console.log(category);
@@ -65,9 +64,9 @@ export default class Searchpost extends Component {
 
     buyItem = (id) => {
         console.log(id);
-        // API.deleteBook(id)
-        //   .then(res => this.setState({ results: res.data }))
-        //   .catch(err => console.log(err));
+        API.updatePost(id)
+          .then(res => this.setState({ results: res.data }))
+          .catch(err => console.log(err));
     };
 
     render() {
@@ -120,7 +119,6 @@ export default class Searchpost extends Component {
                     <br />
                     <hr className="pageSplit" />
                     <br />
-                    <p>Search Results Go Here</p>
                     <Searchresults results={this.state.results} buyitem={this.buyItem} />
                     <Footer />
                 </div>
