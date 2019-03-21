@@ -9,7 +9,7 @@ export default {
       params: usercheck
   });
 },
-  // Gets the posts with the given Category and Location
+  // Gets the posts with the given Category and Location excluding the user's own posts
   getPosts: function (getPost) {
     return axios.get("/api/post",{
       params: getPost

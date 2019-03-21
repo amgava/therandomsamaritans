@@ -8,7 +8,7 @@ const Mybuys = props => {
   console.log("this is mybuys props" + props);
     return (
       <Container id="myBuysBox">
-        <span><h3 className="alert-primary p-2">Thing I Am Buying</h3></span>
+        <span><h3 className="alert-primary p-2">Things I Am Buying</h3></span>
             {props.activebuys.length ? (
               <List>
                 {props.activebuys.map(res => (
