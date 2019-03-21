@@ -4,16 +4,17 @@
 
 .App-header {
   color: white;
-  margin: auto;
-  display: inline;
+  display: inline-block;
+  padding: 25px;
 }
 
 .App-body {
   text-align: center;
   background-color: blue;
-  min-height: 50vh;
+  min-height: 60vh;
   width: 100%;
   display: inline-block;
+  padding: 15px;
 }
 
 .App-footer {
