@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Pageswitch from "../../components/Pageswitch/Pageswitch";
 import Searchresults from "../../components/Seachresults/Searchresults";
 import Footer from "../../components/Footer/Footer";

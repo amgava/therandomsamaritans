@@ -11,9 +11,13 @@ export default class Login extends Component {
             email: "",
             password: "",
             currentUser: "",
-            auth: false
+            auth: false,
+            myPosts: [],
+            myBuys: []
         };
         this.resetform = this.resetform.bind(this);
+        this.getMyPosts = this.getMyPosts.bind(this);
+        this.getMyBuys = this.getMyBuys.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleLoginFormSubmit = this.handleLoginFormSubmit.bind(this);
     }
@@ -56,9 +60,10 @@ export default class Login extends Component {
                     this.setState({ auth: false });
                     throw new Error(res.data.message);
                 }
+                this.setState({ currentUser: res.data._id });
+            }).then(() => {
                 console.log("user Exists and login Successful");
-                console.log(res.data);
-                this.setState({ auth: true, currentUser: res.data._id });
+                this.setState({ auth: true });
             })
             .catch(err => console.log(err));
     }
@@ -74,6 +79,30 @@ export default class Login extends Component {
             userCheck: {}
         });
     }
+
+    getMyPosts = (id) => {
+        const getPost = {
+            _id: id,
+        }
+        API.getPosts(getPost)
+            .then(res => {
+                console.log("this is getMyPosts" + Object.keys(res.data));
+                this.setState({ myPosts: res.data })
+            })
+            .catch(err => console.log(err));
+    };
+
+    getMyBuys = (id) => {
+        const getBuys = {
+            buyerId: id,
+        }
+        API.getPosts(getBuys)
+            .then(res => {
+                console.log("this is getMyBuys" + Object.keys(res.data));
+                this.setState({ myBuys: res.data })
+            })
+            .catch(err => console.log(err));
+    };
 
     renderPage = () => {
         if (this.state.auth === false) {
@@ -103,7 +132,7 @@ export default class Login extends Component {
                         </div>
                     </header>
                     <div className="App-body">
-                        <Landing currentuser={this.state.currentUser} />
+                        <Landing currentuser={this.state.currentUser} mybuys={this.myBuys} myposts={this.myPosts} />
                     </div>
                 </div>
             );
