@@ -15,22 +15,21 @@ export default {
       params: getPost
     });
   },
-<<<<<<< HEAD
-  //  Deletes the pos with the given id
-  updatePost: function(id) {
-    return axios.put("/api/post/" + id);
-  },
-=======
 
   getUserPosts: function (curruser) {
     console.log("Current user in API getUserPosts is" + curruser);
     return axios.get("/api/post/" + curruser)
   },
+  getUserBuys: function (curruserasBuyerID) {
+    console.log("Current user in API getUserBuys is" + curruserasBuyerID);
+    return axios.get("/api/post",{
+      params: curruserasBuyerID
+    });
+  },
   /*// Deletes the pos with the given id
   deleteBook: function(id) {
     return axios.delete("/api/books/" + id);
   },*/
->>>>>>> 47b7f91239edee1731ebbd77029df2af2e18264f
   // Saves a post to the database
   savePost: function (postData) {
     return axios.post("/api/post", postData);

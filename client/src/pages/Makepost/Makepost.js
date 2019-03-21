@@ -81,10 +81,7 @@ export default class Makepost extends Component {
                     <div className="makePostPageBox">
                         <Form className="clearfix">
                             <h2>Post New Item</h2>
-<<<<<<< HEAD
-=======
                             
->>>>>>> 47b7f91239edee1731ebbd77029df2af2e18264f
                             <div className="formItem">
                                 <Form.Label
                                     className="formLabel">
