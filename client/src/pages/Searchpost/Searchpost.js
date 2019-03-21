@@ -45,8 +45,10 @@ export default class Searchpost extends Component {
         console.log("Entered handleSearchPostsFormSubmit");
         const category = this.state.category;
         const location = this.state.location;
+        const buyerId = this.state.currentUser;
         console.log(category);
         console.log(location);
+        console.log(buyerId);
         this.getResults(category, location);
     };
 
