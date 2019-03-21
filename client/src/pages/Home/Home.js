@@ -76,6 +76,8 @@ export default class Home extends Component {
                 <header className="App-header">
                     <div className="landingBar">
                         <p><strong className="landingTitle">Sign Up Now!</strong></p>
+                        <p><strong className="homeTitles">Already A Member?</strong><br />
+                        <Link to={'/login'}><strong>Go To Login</strong></Link></p>
                     </div>
                 </header>
                 <div className="App-body">
@@ -89,8 +91,6 @@ export default class Home extends Component {
                         handleNewUserFormSubmit={this.handleNewUserFormSubmit}
                         handleInputChange={this.handleInputChange}
                     />
-                    <p><strong className="landingTitle">Already A Member?</strong></p>
-                    <Link to={'/login'}><strong>Go To Login</strong></Link>
                 </div>
             </div>
         )

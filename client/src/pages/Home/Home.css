@@ -8,7 +8,7 @@
 }
 
 .signupform-input {
-  margin: 15px;
+  margin: 25px;
 }
 
 .pageToggleButton {
@@ -26,8 +26,8 @@
 .signupSpacer {
     width: 80%;
     padding: 5vh;
-     background-color: white; 
-     border-radius: 12px;
+    background-color: white; 
+    border-radius: 12px;
     text-align: justify;
     margin-left: auto;
     margin-right: auto;
@@ -64,7 +64,11 @@ P.alreadyMember {
 input.form-control {
       margin-left: 15px;
       border: 2px solid rgb(19, 203, 228);
-      margin-bottom:4px;
       padding: 15px;
-      display: inline;
+      display: inline-block;
+  }
+
+  .homeTitles {
+    display: inline;
+    color: black;
   }

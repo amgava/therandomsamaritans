@@ -122,8 +122,8 @@ export default class Searchpost extends Component {
                     <hr className="pageSplit" />
                     <br />
                     <Searchresults results={this.state.results} buyitem={this.buyItem} />
-                    <Footer />
                 </div>
+                <Footer />
             </div>
         );
     }
