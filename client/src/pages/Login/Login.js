@@ -12,7 +12,8 @@ export default class Login extends Component {
             password: "",
             currentUser: "",
             auth: false,
-            activePost: []
+            activePost: [],
+            activeBuys:[]
         };
         this.resetform = this.resetform.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -63,6 +64,7 @@ export default class Login extends Component {
                 let currUser = this.state.currentUser;
                 console.log("Current user is "+ currUser);
                 this.getActivePosts(currUser);
+                
             })
             .catch(err => console.log(err));
     }
@@ -80,6 +82,24 @@ export default class Login extends Component {
                 console.log(res.data);
                 this.setState({activePost:res.data});
                 console.log(this.state.activePost);
+                this.getActiveBuys(currUser);
+            })
+            .catch(err => console.log(err));
+    }
+
+    getActiveBuys = (currUser) => {
+        console.log(currUser);
+        API.getUserBuys(currUser)
+            .then(res => {
+                //console.log(res);
+                if (res.data.status === "error") {
+                    alert("No active buys for the user");
+                    throw new Error(res.data.message);
+                }
+                console.log("Active buys exist for user");
+                console.log(res.data);
+                this.setState({activeBuys:res.data});
+                console.log(this.state.activeBuys);
             })
             .catch(err => console.log(err));
     }

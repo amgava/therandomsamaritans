@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-  //Search for books based on title
+  //Search for users based on username
   loginUser: function (usercheck) {
     console.log(usercheck);
 
@@ -19,6 +19,11 @@ export default {
   getUserPosts: function (curruser) {
     console.log("Current user in API getUserPosts is" + curruser);
     return axios.get("/api/post/" + curruser)
+  },
+
+  getUserBuys: function (curruser) {
+    console.log("Current user in API getUserBuys is" + curruser);
+    return axios.get("/api/buy/" + curruser)
   },
   /*// Deletes the pos with the given id
   deleteBook: function(id) {
