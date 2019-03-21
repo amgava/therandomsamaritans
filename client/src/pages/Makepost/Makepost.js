@@ -52,7 +52,6 @@ export default class Makepost extends Component {
         let reqprice = this.state.price;
         let reqexpiryDate = this.state.expiryDate;
         let requserId = this.state.currentUser;
-        console.log("The current user is"+ requserId);
         newPost = {
             category: reqcategory,
             location: reqlocation,
@@ -82,20 +81,11 @@ export default class Makepost extends Component {
                     <div className="makePostPageBox">
                         <Form className="clearfix">
                             <h2>Post New Item</h2>
-                            <div className="formItem">
-                                <Form.Control
-                                    id="userId"
-                                    onChange={this.handleInputChange}
-                                    name="userId"
-                                    type="text"
-                                    value={this.state.userId}
-                                    className="hiddenValue"
-                                />
-                            </div>
+                            
                             <div className="formItem">
                                 <Form.Label
                                     className="formLabel">
-                                    Categorey</Form.Label>
+                                    Category</Form.Label>
                                 <Form.Control as="select"
                                     id="category"
                                     onChange={this.handleInputChange}
