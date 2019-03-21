@@ -8,9 +8,13 @@
 
 .App-header {
   background-color:black;
-  min-height: 18vh;
+  min-height: 20vh;
+  color: white;
   margin: 0px;
+  padding-top: 25px;
+  padding: 50px;
   display: inline;
+
 }
 
 .App-body {
@@ -31,7 +35,7 @@
   width: 100%;
   border: 8px;
   border-color: black;
-  background-color:black;
+  background-color:black; 
   color: purple;
   line-height: 140px;
   }
