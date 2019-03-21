@@ -6,7 +6,7 @@ function Card(props) {
   return (
     <div className="card">
       <div className="card-body modal-card-body">
-        <div className="card-text">
+        <div className="card-text view-post">
             <ul>
             <li>
                 <strong>Category:</strong> {props.reqcategory}
@@ -31,6 +31,17 @@ function Card(props) {
             </li>
             </ul>
         </div>
+
+        <div className="card-text make-post">
+          <form className="make-post">
+            <div className="make-post-input">
+              <input
+              //  value=
+              />
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
   );
