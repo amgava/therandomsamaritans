@@ -11,7 +11,8 @@ export default class Login extends Component {
             email: "",
             password: "",
             currentUser: "",
-            auth: false
+            auth: false,
+            activePost: []
         };
         this.resetform = this.resetform.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -59,6 +60,26 @@ export default class Login extends Component {
                 console.log("user Exists and login Successful");
                 console.log(res.data);
                 this.setState({ auth: true, currentUser: res.data._id });
+                let currUser = this.state.currentUser;
+                console.log("Current user is "+ currUser);
+                this.getActivePosts(currUser);
+            })
+            .catch(err => console.log(err));
+    }
+
+    getActivePosts = (currUser) => {
+        console.log(currUser);
+        API.getUserPosts(currUser)
+            .then(res => {
+                //console.log(res);
+                if (res.data.status === "error") {
+                    alert("No active posts for the user");
+                    throw new Error(res.data.message);
+                }
+                console.log("Active posts exist for user");
+                console.log(res.data);
+                this.setState({activePost:res.data});
+                console.log(this.state.activePost);
             })
             .catch(err => console.log(err));
     }

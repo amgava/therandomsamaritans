@@ -15,6 +15,11 @@ export default {
       params: getPost
     });
   },
+
+  getUserPosts: function (curruser) {
+    console.log("Current user in API getUserPosts is" + curruser);
+    return axios.get("/api/post/" + curruser)
+  },
   /*// Deletes the pos with the given id
   deleteBook: function(id) {
     return axios.delete("/api/books/" + id);

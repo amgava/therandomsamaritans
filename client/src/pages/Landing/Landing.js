@@ -17,6 +17,7 @@ function Landing(props) {
                     <strong>   Choose what to do first   </strong>
                     <Link to={`/makepost/${props.currentuser}`}>Create Post</Link>
                 </div>
+                
                 <Footer />
             </div>)
         } else {
