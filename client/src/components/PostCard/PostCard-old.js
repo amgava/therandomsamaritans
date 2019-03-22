@@ -1,47 +1,11 @@
 import React from "react";
-import "./Card.css";
+import "./PostCard.css";
+import TTCMap from "../TTCMap/TTCMap";
 
-$('a[rel=popover]').popover({
-  html: true,
-  trigger: 'hover',
-  content: function () {
-    return '<img src="../../images/SubwayMap.jpg" />';
-  }
-});
-
-function Card(props) {
+function PostCard(props) {
   return (
     <div className="card">
       <div className="card-body modal-card-body">
-
-      {/* view post */}
-        <div className="card-text view-post">
-          <ul>
-          <li>
-              <strong>Category:</strong> {props.reqcategory}
-          </li>
-          <li>
-              <strong>Location:</strong> {props.reqlocation}
-          </li>
-          <li>
-              <strong>Description:</strong> {props.description}
-          </li>
-          <li>
-            <strong>Contact Number:</strong> {props.reqcontactNo}
-          </li>
-          <li>
-            <strong>Price:</strong> {props.reqprice}
-          </li>
-          <li className="hiddenClass">
-            <strong>Expiry:</strong> {props.reqexpiryDate}
-          </li>
-          <li className="hiddenClass">
-            <strong>User ID:</strong> {props.requserId}
-          </li>
-          </ul>
-        </div>
-
-        {/* make post */}
         <div className="card-text make-post">
           <form className="make-post">
             <div className="make-post-input">
@@ -59,8 +23,8 @@ function Card(props) {
                   <option>4</option>
                   <option>5</option>
                 </select>
-                <button type="button" class="btn btn-danger" data-toggle="popover" data-trigger="focus" title="TTC Map">Stations</button>
-
+                <TTCMap />
+                {/* <button type="button" class="btn btn-danger" data-toggle="popover" data-trigger="focus" title="TTC Map">Stations</button> */}
               </div>
               <div className="form-group">
                 <label for="description-in">Description:</label>
@@ -82,14 +46,13 @@ function Card(props) {
                 <label for="user-id-in" className="form-label hiddenClass">User ID</label>
                 <input type="text" id="user-id-in" value={props.requserId} />
               </div>
-{/* end form input */}
             </div>
           </form>
         </div>
-
       </div>
     </div>
   );
 }
 
-export default Card;
+
+export default PostCard;

@@ -74,6 +74,7 @@ export default class Makepost extends Component {
     render() {
         return (
             <div className="wrapper">
+            {/* <ModalMain showModal={true} anotherProperty={"stringvalue"}/> */}
                 <header className="App-header">
                     <Pageswitch />
                     <Form className="searchInputForm" />
