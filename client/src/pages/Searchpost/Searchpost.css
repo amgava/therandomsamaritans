@@ -11,3 +11,7 @@
 .formLabel {
     margin-right: 25px;
 }
+
+.searchResultsBody {
+    min-height: 40vh;
+}

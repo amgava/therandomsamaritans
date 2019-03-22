@@ -5,18 +5,19 @@ import Form from 'react-bootstrap/Form';
 import Footer from "../../components/Footer/Footer";
 import API from "../../utils/API";
 import "./Makepost.css";
+const moment = require("moment");
 
 export default class Makepost extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userId: { type: String },
-            category: { type: String },
-            location: { type: String },
-            description: { type: [String] },
-            contactNo: { type: String },
-            price: { type: Number, default: '0' },
-            expiryDate: { type: Date },
+            userId: "",
+            category: "",
+            location: "",
+            description: "",
+            contactNo: "",
+            price: "",
+            expiryDate: `${moment().add(1, 'days').format("YYYY-MM-DD")}`,
             currentUser: "",
         };
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -69,6 +70,13 @@ export default class Makepost extends Component {
             console.log("Post Status: " + res.statusText);
             console.log(res);
         });
+        this.setState({
+            category: "",
+            location: "",
+            description: "",
+            price: { type: Number, default: '0' },
+            expiryDate: `${moment().add(1, 'days').format("YYYY-MM-DD")}`,
+        });
     };
 
     render() {
@@ -91,9 +99,10 @@ export default class Makepost extends Component {
                                     onChange={this.handleInputChange}
                                     name="category"
                                     type="text"
+                                    value={this.state.category}
                                 >
                                     <option defaultValue="Select">Select</option>
-                                    <option defaultValue="Food">Food</option>
+                                    <option value="Food">Food</option>
                                     <option value="Services">Services</option>
                                     <option value="Handywork">Handywork</option>
                                     <option value="Babysitting">Babysitting</option>
@@ -108,9 +117,10 @@ export default class Makepost extends Component {
                                     onChange={this.handleInputChange}
                                     name="location"
                                     type="text"
+                                    value={this.state.location}
                                 >
                                     <option defaultValue="Select">Select</option>
-                                    <option defaultValue="St Clair Station">St Clair Station</option>
+                                    <option value="St Clair Station">St Clair Station</option>
                                     <option value="Yonge and Bloor">Yonge and Bloor</option>
                                     <option value="Bathurst Station">Bathurst Station</option>
                                     <option value="Coxwell Station">Coxwell Station</option>
@@ -125,7 +135,7 @@ export default class Makepost extends Component {
                                 <Form.Control as="textarea" rows="5"
                                     id="description"
                                     onChange={this.handleInputChange}
-                                    value={this.description}
+                                    value={this.state.description}
                                     name="description"
                                     placeholder="description"
                                 />
@@ -137,7 +147,7 @@ export default class Makepost extends Component {
                                     id="contactNo"
                                     type="text"
                                     onChange={this.handleInputChange}
-                                    value={this.contactNo}
+                                    value={this.state.contactNo}
                                     name="contactNo"
                                     placeholder="contactNo"
                                 />
@@ -147,7 +157,7 @@ export default class Makepost extends Component {
                                     type="number"
                                     id="price"
                                     onChange={this.handleInputChange}
-                                    value={this.price}
+                                    value={this.state.price}
                                     name="price"
                                     placeholder="price"
                                 />
@@ -157,13 +167,12 @@ export default class Makepost extends Component {
                                     type="date"
                                     id="expiryDate"
                                     onChange={this.handleInputChange}
-                                    value={this.expiryDate}
+                                    value={this.state.expiryDate}
                                     name="expiryDate"
-                                    placeholder="expiryDate"
                                 />
                             </div>
                             <div className="formItem">
-                                <Button variant="primary"
+                                <Button variant="warning"
                                     className="submitNewPost"
                                     onClick={this.handleNewPostsFormSubmit}
                                 >Create New Post</Button>

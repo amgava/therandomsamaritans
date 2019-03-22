@@ -11,7 +11,7 @@ function Loginform(props) {
             name="email"
             type="text"
             className="form-control"
-            placeholder="email"
+            placeholder="@Email"
             id="email"
           />
           <input
@@ -20,7 +20,7 @@ function Loginform(props) {
             name="password"
             type="text"
             className="form-control"
-            placeholder="password"
+            placeholder="Password"
             id="password"
           />
           <button onClick={props.handleLoginFormSubmit} className="submitButton">

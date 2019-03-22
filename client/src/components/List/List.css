@@ -1,8 +1,7 @@
 .list-overflow-container {
   max-height: 545px;
   border: 1px #DDDDDD solid;
-  border-radius: 4px;
-  overflow-y: scroll;
+  border-radius: 35px;
   overflow-x: hidden;
 }
 
@@ -17,7 +16,7 @@
 }
 
 .list-overflow-container li * {
-  cursor: pointer;
+  cursor: none;
 }
 
 .list-overflow-container li a {
