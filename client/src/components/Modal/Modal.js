@@ -1,6 +1,5 @@
 import React from "react";
 import "./Modal.css";
-import Buybutton from "../Buybutton";
 import Card from "../Card";
 
 function Modal() {
