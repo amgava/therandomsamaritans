@@ -10,7 +10,7 @@ module.exports = {
   let userid = req.query.User;
   console.log(userid);
     db.Post
-      .find({$and:[{category:req.query.category},{expiryDate:{$gte:date}},{location:req.query.location},{User:{$ne:userid}}]})   
+      .find({$and:[{category:req.query.category},{expiryDate:{$gte:date}},{buyerId:0},{location:req.query.location},{User:{$ne:userid}}]})   
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -18,7 +18,7 @@ module.exports = {
   findById: function(req, res) {
     console.log(req.params.id);
     db.Post
-      .find({$and:[{User:req.params.id},{expiryDate:{$gte:date}}]})
+      .find({$and:[{User:req.params.id},{buyerId:0},{expiryDate:{$gte:date}}]})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -31,8 +31,10 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    let cBuyerId = req.body.buyerId;
+    console.log("Buyer id is : "+ cBuyerId)
     db.Post
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .updateOne({ _id: req.body.postId},{ $set: { buyerId: cBuyerId }})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

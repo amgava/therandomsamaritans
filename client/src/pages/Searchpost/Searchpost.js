@@ -20,6 +20,7 @@ export default class Searchpost extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSearchPostsFormSubmit = this.handleSearchPostsFormSubmit.bind(this);
         this.getResults = this.getResults.bind(this);
+       // this.buyItem = this.buyItem.bind(this);
     }
 
     componentDidMount() {
@@ -70,8 +71,13 @@ export default class Searchpost extends Component {
 
     buyItem = (id) => {
         console.log(id);
-        API.updatePost(id)
-            .then(res => this.setState({ results: res.data }))
+        let user = this.state.currentUser;
+        const buyerUpdate = {
+            postId : id,
+            buyerId : user
+        }
+         API.buyPost(buyerUpdate)
+            .then(res => console.log(res.data))
             .catch(err => console.log(err));
     };
 
@@ -122,7 +128,7 @@ export default class Searchpost extends Component {
                     </Form>
                 </header>
                 <div className="App-body">
-                    <Searchresults results={this.state.results} buyitem={this.buyItem} />
+                    <Searchresults results={this.state.results} buyItem={this.buyItem} />
                 </div>
                 <Footer />
             </div>

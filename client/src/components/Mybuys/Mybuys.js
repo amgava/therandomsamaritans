@@ -14,7 +14,7 @@ const Mybuys = props => {
                 {props.activebuys.map(res => (
                   <ListItem key={res._id}>
                       <strong>{res.description}</strong>
-                    <Buybutton onClick={() => props.buyitem(res._id)} />
+                    
                   </ListItem>
                 ))}
               </List>

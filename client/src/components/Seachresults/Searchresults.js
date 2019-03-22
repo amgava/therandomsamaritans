@@ -4,6 +4,7 @@ import { Container } from "../Grid";
 import { List, ListItem } from "../List";
 
 const Searchresults = props => {
+  console.log("Search Results: ", props);
     return (
       <span className="searchResultsBox">
       <Container fluid>
@@ -26,7 +27,7 @@ const Searchresults = props => {
                       <strong>Expires: {res.expiryDate}</strong>
                       </li>
                       <li>
-                      <Buybutton onClick={() => props.buyitem(res._id)} />
+                      <Buybutton buyItem={props.buyItem} r_id={res._id}/>
                       </li>
                       </List>
                   </ListItem>

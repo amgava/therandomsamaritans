@@ -27,7 +27,7 @@ const Myposts = props => {
                       <strong>Expires: {res.expiryDate}</strong>
                       </li>
                       <li>
-                      <Buybutton onClick={() => props.buyitem(res._id)} />
+                      
                       </li>
                       </List>
                   </ListItem>
