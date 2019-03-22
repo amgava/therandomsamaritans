@@ -6,27 +6,29 @@
   color: white;
   display: inline;
   text-align: center;
-  padding: 25px;
+  padding: 5px;
 }
 
 .App-body {
   text-align: center;
   background-color:#03B5AC;
-  min-height: 60vh;
   width: 100%;
   display: inline-block;
-  padding: 15px;
+  padding: 5px;
 }
 
 .App-footer {
   text-align: center;
-  font-size: 25px;
+  font-size: 35px;
   min-height: 20vh;
   display: inline-block;
   width: 100%;
-  border: 8px;
-  border-color: black;
   background-color:black; 
   color: purple;
   line-height: 140px;
+  }
+
+  .wrapper {
+    margin: 0px;
+    padding: 0px;
   }

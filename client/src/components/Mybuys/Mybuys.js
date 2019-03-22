@@ -7,8 +7,8 @@ import "./Mybuys.css";
 const Mybuys = props => {
   console.log("this is mybuys props" + props);
     return (
-      <Container id="myBuysBox">
-        <span><h3 className="alert-primary p-2">Things I Am Buying</h3></span>
+      <Container className="myBuysBox m-2">
+        <span><h3 className="alert-primary p-3">Things I Am Buying</h3></span>
             {props.activebuys.length ? (
               <List>
                 {props.activebuys.map(res => (
@@ -19,7 +19,7 @@ const Mybuys = props => {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className="m-2 p-2">No Results to Display</h3>
             )}
       </Container>
     );
