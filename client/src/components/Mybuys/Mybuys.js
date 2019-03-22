@@ -19,15 +19,18 @@ const Mybuys = props => {
         <List>
           {props.activebuys.map(res => (
             <ListItem key={res._id}>
-              <List>
-                <li>
-                  <strong className="postTitle">{res.description}</strong>
-                </li>
-                <li>
-                  <strong>Expires: {moment(res.expiryDate).format('MMMM Do YYYY')}</strong>
-                </li>
-              </List>
-            </ListItem>
+                  <List>
+                    <li>
+                      <strong className="postTitle">{res.description}</strong>
+                      </li>
+                      <li>
+                      <strong>{convertPhone(res.contactNo)}</strong>
+                      </li>                
+                      <li>
+                      <strong>Expires: {moment(res.expiryDate).format('MMMM Do YYYY')}</strong>
+                      </li>
+                      </List>
+                  </ListItem>
           ))}
         </List>
       ) : (
