@@ -1,8 +1,11 @@
 import React from "react";
+import Footer from "../../components/Footer/Footer";
 import "../../pages/Home/Home.css";
+
 
 function Newuserform(props) {
   return (
+    <div>
     <form className="signupSpacer">
       <div className="signupform-input">
         <input
@@ -65,6 +68,8 @@ function Newuserform(props) {
         </button>
       </div>
     </form>
+    <Footer />
+    </div>
   );
 }
 
