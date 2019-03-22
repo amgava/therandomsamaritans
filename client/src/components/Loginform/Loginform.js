@@ -18,7 +18,7 @@ function Loginform(props) {
             onChange={props.handleInputChange}
             value={props.password}
             name="password"
-            type="text"
+            type="password"
             className="form-control"
             placeholder="password"
             id="password"
