@@ -16,16 +16,16 @@
 }
 
 .makePostPageBox {
-    padding: 0px;
-    padding-left: 25px;
-    padding-right: 25px;
+margin: 55px;
 }
 
 .formLabel {
     font-weight: bolder;
 }
 
-#price, #date, #contactNo {
-margin: auto;
+.makePostTitle {
+    display: inline;
+    margin: 35px;
+    font-weight: bold;
 }
 

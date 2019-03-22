@@ -1,17 +1,28 @@
 .searchInputForm {
-    display: inline-block;
-    padding: 5px;
-    margin: 12px;
+    display: inline;
 }
 
 .formItem {
-    margin-right: 25px;
+    margin: 1px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 4px;
+    text-align: center;
 }
 
 .formLabel {
-    margin-right: 25px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 0px;
+    margin: 1px;
+}
+
+.searchSubmit {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin: 1px;
 }
 
 .searchResultsBody {
-    min-height: 40vh;
+    min-height: 50vh;
 }
