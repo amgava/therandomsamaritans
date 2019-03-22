@@ -11,25 +11,9 @@ const Searchresults = props => {
             {props.results.length ? (
               <List>
                 {props.results.map(res => (
-                  <ListItem key={res._id}>
-                  <List>
-                    <li>
-                      <strong>{res.description}</strong>
-                      </li>
-                      <li>
-                      <strong>${res.price}</strong>
-                      </li>
-                      <li>
-                      <strong>{res.contactNo}</strong>
-                      </li>                
-                      <li>
-                      <strong>Expires: {res.expiryDate}</strong>
-                      </li>
-                      <li>
-                      <Buybutton onClick={() => props.buyitem(res._id)} />
-                      </li>
-                      </List>
-                  </ListItem>
+                  <ListItem
+                  key={res._id}
+                  onClick={() => props.buyitem(res._id)} />
                 ))}
               </List>
             ) : (

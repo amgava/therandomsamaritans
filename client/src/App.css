@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'IBM Plex Serif';
+  src: local('IBM Plex Serif Regular'), url(./fonts/IBM_Plex_Serif/IBMPlexSerif-Regular.ttf) format('truetype');
+}
+
 .App {
   text-align: center;
 }
@@ -26,7 +31,11 @@
   width: 100%;
   border: 8px;
   border-color: black;
-  background-color:black; 
+  background-color:black;
   color: purple;
   line-height: 140px;
   }
+
+body {
+  font-family: 'IBM Plex Serif', serif;
+}
