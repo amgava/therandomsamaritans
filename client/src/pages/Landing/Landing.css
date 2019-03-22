@@ -1,7 +1,6 @@
 .landingBar {
     text-align: center;
-    margin: auto;
-    padding: 25px;
+    padding: 5px;
 }
 
 .landingTitle {
@@ -14,9 +13,9 @@
     font-size: 16px;
     text-align: center;
     margin-bottom: 15px;
+    width: 100%;
     background-color: white;
-    padding: 25px;
-    min-height: 8vh;
+    padding: 15px;
 }
 
 .landingBody {

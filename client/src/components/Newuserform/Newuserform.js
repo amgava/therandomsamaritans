@@ -29,7 +29,7 @@ function Newuserform(props) {
           name="password"
           type="text"
           className="form-control"
-          placeholder="password"
+          placeholder="Password"
           id="password"
         />
         <input
@@ -47,7 +47,7 @@ function Newuserform(props) {
           name="email"
           type="text"
           className="form-control"
-          placeholder="email"
+          placeholder="@Email"
           id="email"
         />
         <input
@@ -56,7 +56,7 @@ function Newuserform(props) {
           name="location"
           type="text"
           className="form-control"
-          placeholder="Location"
+          placeholder="Nearest Subway"
           id="location"
         />
         

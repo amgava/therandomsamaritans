@@ -5,8 +5,8 @@ import "./Myposts.css";
 
 const Myposts = props => {
   return (
-    <Container className="myPostsBo p-2 m-2">
-      <span><h3 className="alert-primary ">Things I Am Selling</h3></span>
+    <Container className="myPostsBox m-2">
+      <span><h3 className="alert-primary p-3">Things I Am Selling</h3></span>
       {props.activeposts.length ? (
         <List>
           {props.activeposts.map(res => (
@@ -23,7 +23,7 @@ const Myposts = props => {
           ))}
         </List>
       ) : (
-          <h3>No Results to Display</h3>
+          <h3 className="m-2 p-2">No Results to Display</h3>
         )}
     </Container>
   );

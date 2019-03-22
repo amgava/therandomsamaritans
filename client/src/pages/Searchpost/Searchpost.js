@@ -121,7 +121,7 @@ export default class Searchpost extends Component {
                         </div>
                     </Form>
                 </header>
-                <div className="App-body">
+                <div className="App-body searchResultsBody">
                     <Searchresults results={this.state.results} buyitem={this.buyItem} />
                 </div>
                 <Footer />
