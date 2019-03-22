@@ -21,10 +21,12 @@ export default class Pageswitch extends Component {
         const getUrl = window.location.href;
         const parseUrl = getUrl.split("/");
         const verifyPage = parseUrl[3];
-        if (verifyPage === "searchpost") {
-            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} className="pageToggle" to={'/makepost'}>Go To Create New Post Page</Link></div>);
+        const passUser = parseUrl[4];
+        if (verifyPage === "searchpost") {    
+
+            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} to={`/makepost/${passUser}`}><button className="btn btn-lrg btn-warning" >Make Post</button></Link></div>);
         } else {
-            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} className="pageToggle" to={'/searchpost'}>Go To Search Page</Link></div>);
+            return (<div className="pageSwitchBar"><Link onClick={this.togglewhichpage} to={`/searchpost/${passUser}`}><button className="btn btn-lrg btn-warning" >Search Posts</button></Link></div>);
         }
     };
 

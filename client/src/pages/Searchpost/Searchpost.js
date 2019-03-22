@@ -13,7 +13,9 @@ export default class Searchpost extends Component {
         this.state = {
             category: "",
             location: "",
-            results: []
+            currentUser: "",
+            results: [],
+           // TempResults: []
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSearchPostsFormSubmit = this.handleSearchPostsFormSubmit.bind(this);
@@ -21,7 +23,13 @@ export default class Searchpost extends Component {
     }
 
     componentDidMount() {
-        this.getResults();
+        const getUrl = window.location.href;
+        const parseUrl = getUrl.split("/");
+        const verifyUser = parseUrl[parseUrl.length - 1];
+        if (verifyUser === "landing") {
+            console.log("please log in");
+        } else
+            this.setState({ currentUser: [verifyUser] });
     }
 
     handleInputChange = e => {
@@ -30,27 +38,41 @@ export default class Searchpost extends Component {
         this.setState({
             [name]: value
         });
-        console.log(this.state.results);
     };
 
     handleSearchPostsFormSubmit = (e) => {
         e.preventDefault();
-        console.log("category " + this.state.category)
+        console.log("Entered handleSearchPostsFormSubmit");
         const category = this.state.category;
-        this.getResults(category);
+        const location = this.state.location;
+        const User = this.state.currentUser;
+        const UserId = User;
+        console.log(category);
+        console.log(location);
+        console.log(UserId);
+        this.getResults(category, location, UserId);
     };
 
-    getResults = (category) => {
-        API.getPosts(category)
+    getResults = (category, location, UserId) => {
+        console.log(category);
+        console.log(location);
+        let getPost = {
+            category: category,
+            location: location,
+            User: UserId
+
+        }
+        API.getPosts(getPost)
             .then(res => this.setState({ results: res.data }))
             .catch(err => console.log(err));
+           
     };
 
     buyItem = (id) => {
         console.log(id);
-        // API.deleteBook(id)
-        //   .then(res => this.setState({ results: res.data }))
-        //   .catch(err => console.log(err));
+        API.updatePost(id)
+            .then(res => this.setState({ results: res.data }))
+            .catch(err => console.log(err));
     };
 
     render() {
@@ -58,9 +80,7 @@ export default class Searchpost extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <Pageswitch />
-                </header>
-                <div className="App-body">
-                    <Form>
+                    <Form className="searchInputForm">
                         <div className="formItem">
                             <Form.Label
                                 className="formLabel"
@@ -70,7 +90,8 @@ export default class Searchpost extends Component {
                                 name="category"
                                 type="text"
                                 id="category">
-                                <option defaultValue="Food">Food</option>
+                                <option defaultValue="Select">Select</option>
+                                <option value="Food">Food</option>
                                 <option value="Services">Services</option>
                                 <option value="Handywork">Handywork</option>
                                 <option value="Babysitting">Babysitting</option>
@@ -85,6 +106,7 @@ export default class Searchpost extends Component {
                                 name="location"
                                 type="text"
                                 id="location">
+                                <option defaultValue="Select">Select</option>
                                 <option defaultValue="St Clair Station">St Clair Station</option>
                                 <option value="Yonge and Bloor">Yonge and Bloor</option>
                                 <option value="Bathurst Station">Bathurst Station</option>
@@ -94,18 +116,15 @@ export default class Searchpost extends Component {
                         <div className="formItem">
                             <Button variant="primary"
                                 onClick={this.handleSearchPostsFormSubmit} >
-                                Search Stuff
+                                Submit Search
                             </Button>
                         </div>
                     </Form>
-                    <br />
-                    <hr className="pageSplit" />
-                    <br />
-                    <p>Search Results Go Here</p>
-                    <Searchresults results={this.state.results} buyitem={this.buyItem}/>
-                    {/* <img alt="placeholder" src={require('./placeholdersearchresults.png')} /> */}
-                    <Footer />
+                </header>
+                <div className="App-body">
+                    <Searchresults results={this.state.results} buyitem={this.buyItem} />
                 </div>
+                <Footer />
             </div>
         );
     }

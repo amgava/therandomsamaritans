@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Pageswitch from "../../components/Pageswitch/Pageswitch";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import Footer from "../../components/Footer/Footer";
 import API from "../../utils/API";
 import "./Makepost.css";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
 export default class Makepost extends Component {
     constructor(props) {
@@ -17,9 +17,20 @@ export default class Makepost extends Component {
             contactNo: { type: String },
             price: { type: Number, default: '0' },
             expiryDate: { type: Date },
+            currentUser: "",
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleNewPostsFormSubmit = this.handleNewPostsFormSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        const getUrl = window.location.href;
+        const parseUrl = getUrl.split("/");
+        const verifyUser = parseUrl[parseUrl.length - 1];
+        if (verifyUser === "landing") {
+            console.log("please log in");
+        } else
+            this.setState({ currentUser: [verifyUser] });
     }
 
     handleInputChange = e => {
@@ -40,7 +51,7 @@ export default class Makepost extends Component {
         let reqcontactNo = this.state.contactNo;
         let reqprice = this.state.price;
         let reqexpiryDate = this.state.expiryDate;
-        let requserId = '5c89b8c935a71203a483b6f4';
+        let requserId = this.state.currentUser;
         newPost = {
             category: reqcategory,
             location: reqlocation,
@@ -48,7 +59,7 @@ export default class Makepost extends Component {
             contactNo: reqcontactNo,
             price: reqprice,
             expiryDate: reqexpiryDate,
-            userId: requserId
+            User: requserId
         }
         console.log(newPost);
         API.savePost(newPost).then(res => {
@@ -65,31 +76,23 @@ export default class Makepost extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <Pageswitch />
+                    <Form className="searchInputForm" />
                 </header>
                 <div className="App-body">
                     <div className="makePostPageBox">
                         <Form className="clearfix">
                             <h2>Post New Item</h2>
                             <div className="formItem">
-                                <Form.Control
-                                    id="userId"
-                                    onChange={this.handleInputChange}
-                                    name="userId"
-                                    type="text"
-                                    value={this.state.userId}
-                                    className="hiddenValue"
-                                />
-                            </div>
-                            <div className="formItem">
                                 <Form.Label
                                     className="formLabel">
-                                    Categorey</Form.Label>
+                                    Category</Form.Label>
                                 <Form.Control as="select"
                                     id="category"
                                     onChange={this.handleInputChange}
                                     name="category"
                                     type="text"
                                 >
+                                    <option defaultValue="Select">Select</option>
                                     <option defaultValue="Food">Food</option>
                                     <option value="Services">Services</option>
                                     <option value="Handywork">Handywork</option>
@@ -106,6 +109,7 @@ export default class Makepost extends Component {
                                     name="location"
                                     type="text"
                                 >
+                                    <option defaultValue="Select">Select</option>
                                     <option defaultValue="St Clair Station">St Clair Station</option>
                                     <option value="Yonge and Bloor">Yonge and Bloor</option>
                                     <option value="Bathurst Station">Bathurst Station</option>

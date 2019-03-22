@@ -1,16 +1,17 @@
 import React from "react";
-import Buybutton from "../Buybutton";
 import { Container } from "../Grid";
+import Buybutton from "../Buybutton/Buybutton";
 import { List, ListItem } from "../List";
+import "./Myposts.css";
 
-const Searchresults = props => {
+const Myposts = props => {
+  console.log("this is myposts props" + props);
     return (
-      <span className="searchResultsBox">
-      <Container fluid>
-        <span><h2>Search Results:</h2></span>
-            {props.results.length ? (
+      <Container id="myPostsBox">
+        <span><h3 className="alert-primary p-2">Things I Am Selling</h3></span>
+            {props.activeposts.length ? (
               <List>
-                {props.results.map(res => (
+                {props.activeposts.map(res => (
                   <ListItem key={res._id}>
                   <List>
                     <li>
@@ -36,8 +37,7 @@ const Searchresults = props => {
               <h3>No Results to Display</h3>
             )}
       </Container>
-      </span>
     );
   }
 
-export default Searchresults;
+export default Myposts;

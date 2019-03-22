@@ -8,8 +8,7 @@
 }
 
 .formItem {
-    display: inline-flex;
-    float: left;
+    display: inline-block;
 }
 
 .descriptionBox {
@@ -24,5 +23,9 @@
 
 .formLabel {
     font-weight: bolder;
+}
+
+#price, #date, #contactNo {
+margin: auto;
 }
 

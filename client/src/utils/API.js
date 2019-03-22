@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-  //Search for books based on title
+  //Search for users based on username
   loginUser: function (usercheck) {
     console.log(usercheck);
 
@@ -9,10 +9,21 @@ export default {
       params: usercheck
   });
 },
+  // Gets the posts with the given Category and Location excluding the user's own posts
+  getPosts: function (getPost) {
+    return axios.get("/api/post",{
+      params: getPost
+    });
+  },
 
-  // Gets the posts with the given Category and Location
-  getPosts: function (category) {
-    return axios.get("/api/post", category);
+  getUserPosts: function (curruser) {
+    console.log("Current user in API getUserPosts is" + curruser);
+    return axios.get("/api/post/" + curruser)
+  },
+
+  getUserBuys: function (curruser) {
+    console.log("Current user in API getUserBuys is" + curruser);
+    return axios.get("/api/buy/" + curruser)
   },
   /*// Deletes the pos with the given id
   deleteBook: function(id) {

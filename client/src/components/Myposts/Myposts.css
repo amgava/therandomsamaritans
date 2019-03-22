@@ -1,0 +1,7 @@
+#myPostsBox {
+    background-color: white;
+    padding: 5px;
+    margin: 15px;
+    max-width: 500px;
+    display: inline;
+}

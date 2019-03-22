@@ -5,7 +5,7 @@ import "../Navbar.css";
 function homeLink() {
     return (
         <li className="App-logo">
-        <Link to={'/'} className="logo"><img className="logo" alt="homelink" src={require('./logo.png')} /></Link>
+        <Link to={'/'} className="logo"><img className="logo" alt="homelink" src={require('./commetpink.png')} /></Link>
         </li>
     );
 }
