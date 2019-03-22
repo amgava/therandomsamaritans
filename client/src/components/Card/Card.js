@@ -1,6 +1,13 @@
 import React from "react";
 import "./Card.css";
-import Location from "../Location";
+
+$('a[rel=popover]').popover({
+  html: true,
+  trigger: 'hover',
+  content: function () {
+    return '<img src="../../images/SubwayMap.jpg" />';
+  }
+});
 
 function Card(props) {
   return (
@@ -52,6 +59,8 @@ function Card(props) {
                   <option>4</option>
                   <option>5</option>
                 </select>
+                <button type="button" class="btn btn-danger" data-toggle="popover" data-trigger="focus" title="TTC Map">Stations</button>
+
               </div>
               <div className="form-group">
                 <label for="description-in">Description:</label>
