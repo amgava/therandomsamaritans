@@ -2,6 +2,14 @@ import React from "react";
 import Buybutton from "../Buybutton";
 import { Container } from "../Grid";
 import { List, ListItem } from "../List";
+import "./Searchresults.css";
+const moment = require("moment");
+
+const convertPhone = (rawPhone) => {
+  var insert = "-";
+  var result = [rawPhone.slice(0, 3), insert, rawPhone.slice(3, 6), insert, rawPhone.slice(6, 10)].join('');
+  return result;
+}
 
 const Searchresults = props => {
   console.log("Search Results: ", props);
@@ -15,16 +23,16 @@ const Searchresults = props => {
                   <ListItem key={res._id}>
                   <List>
                     <li>
-                      <strong>{res.description}</strong>
+                      <strong className="postTitle">{res.description}</strong>
                       </li>
                       <li>
-                      <strong>${res.price}</strong>
+                      <strong>$ {res.price}</strong>
                       </li>
                       <li>
-                      <strong>{res.contactNo}</strong>
+                      <strong>{convertPhone(res.contactNo)}</strong>
                       </li>                
                       <li>
-                      <strong>Expires: {res.expiryDate}</strong>
+                      <strong>Expires: {moment(res.expiryDate).format('MMMM Do YYYY')}</strong>
                       </li>
                       <li>
                       <Buybutton buyItem={props.buyItem} r_id={res._id}/>
@@ -34,7 +42,7 @@ const Searchresults = props => {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className="m-2 p-2">No Results to Display</h3>
             )}
       </Container>
       </span>

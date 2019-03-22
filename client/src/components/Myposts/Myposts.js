@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "../Grid";
 import { List, ListItem } from "../List";
 import "./Myposts.css";
+const moment = require("moment");
 
 const Myposts = props => {
   return (
@@ -12,27 +13,12 @@ const Myposts = props => {
           {props.activeposts.map(res => (
             <ListItem key={res._id}>
               <List>
-                {props.activeposts.map(res => (
-                  <ListItem key={res._id}>
-                  <List>
-                    <li>
-                      <strong>{res.description}</strong>
-                      </li>
-                      <li>
-                      <strong>${res.price}</strong>
-                      </li>
-                      <li>
-                      <strong>{res.contactNo}</strong>
-                      </li>                
-                      <li>
-                      <strong>Expires: {res.expiryDate}</strong>
-                      </li>
-                      <li>
-                      
-                      </li>
-                      </List>
-                  </ListItem>
-                ))}
+                <li>
+                  <strong className="postTitle">{res.description}</strong>
+                </li>
+                <li>
+                  <strong>Expires: {moment(res.expiryDate).format('MMMM Do YYYY')}</strong>
+                </li>
               </List>
             </ListItem>
           ))}
