@@ -1,17 +1,26 @@
-.logomap{
-
-    /* width: 400px; */
+.logomap {
+    max-width: 400px;
+    padding: 25px;
+    margin: 5px;
 }
 
-.p{
+.p {
     color: white;
 }
 
-.siteTitle{
+.siteTitle {
     color: white;
+    padding: 25px;
 }
 
 
-.adressComet{
+.adressComet {
 background-color: rgba(255,255,255,0.5);
+}
+
+.deets {
+    text-align: left;
+    padding: 5px;
+    margin: 15px;
+    line-height: 35px;
 }
