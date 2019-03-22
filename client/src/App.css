@@ -23,9 +23,11 @@
   min-height: 20vh;
   display: inline-block;
   width: 100%;
-  background-color:black; 
-  color: purple;
+  background-color:#201F20; 
+  /* color: purple; */
   line-height: 140px;
+  margin-bottom: 0;
+
   }
 
   .wrapper {
