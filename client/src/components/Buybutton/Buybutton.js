@@ -2,8 +2,9 @@ import React from "react";
 import "./Buybutton.css"; 
 
 function Buybutton(props) {
+  console.log(props);
   return (
-    <button className="btn btn-primary m-2" onClick={() => props.buyitem(props._id)} >Buy Now</button>
+    <button className="btn btn-primary m-2" onClick={() => props.buyItem(props.r_id)} >Buy Now</button>
   );
 }
 

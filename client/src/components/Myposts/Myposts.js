@@ -12,12 +12,27 @@ const Myposts = props => {
           {props.activeposts.map(res => (
             <ListItem key={res._id}>
               <List>
-                <li>
-                  <strong>{res.description}</strong>
-                </li>
-                <li>
-                  <strong>Expires: {res.expiryDate}</strong>
-                </li>
+                {props.activeposts.map(res => (
+                  <ListItem key={res._id}>
+                  <List>
+                    <li>
+                      <strong>{res.description}</strong>
+                      </li>
+                      <li>
+                      <strong>${res.price}</strong>
+                      </li>
+                      <li>
+                      <strong>{res.contactNo}</strong>
+                      </li>                
+                      <li>
+                      <strong>Expires: {res.expiryDate}</strong>
+                      </li>
+                      <li>
+                      
+                      </li>
+                      </List>
+                  </ListItem>
+                ))}
               </List>
             </ListItem>
           ))}

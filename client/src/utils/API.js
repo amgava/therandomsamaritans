@@ -25,10 +25,9 @@ export default {
     console.log("Current user in API getUserBuys is" + curruser);
     return axios.get("/api/buy/" + curruser)
   },
-  /*// Deletes the pos with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
-  },*/
+  buyPost: function (buyerUpdate) {
+    return axios.put("/api/post", buyerUpdate);
+  },
   // Saves a post to the database
   savePost: function (postData) {
     return axios.post("/api/post", postData);
@@ -36,5 +35,6 @@ export default {
   saveUser: function (UserData) {
     return axios.post("/api/user", UserData);
   }
+
 };
 
