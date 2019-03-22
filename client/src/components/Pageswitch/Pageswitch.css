@@ -1,7 +1,8 @@
 .pageSwitchBar {
-    display: inline-block;
-    padding: 25px;
-    margin: 25px;
+    display: inline-flex;
+    float: left;
+    padding: 15px;
+    margin: 15px;
 }
 
 A.pageToggle {

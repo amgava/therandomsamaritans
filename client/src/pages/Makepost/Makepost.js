@@ -82,14 +82,11 @@ export default class Makepost extends Component {
     render() {
         return (
             <div className="wrapper">
-                <header className="App-header">
-                    <Pageswitch />
-                    <Form className="searchInputForm" />
-                </header>
                 <div className="App-body">
+                <Pageswitch />
                     <div className="makePostPageBox">
-                        <Form className="clearfix">
-                            <h2>Post New Item</h2>
+                        <Form>
+                            <h2 className="makePostTitle">Post New Item</h2>
                             <div className="formItem">
                                 <Form.Label
                                     className="formLabel">

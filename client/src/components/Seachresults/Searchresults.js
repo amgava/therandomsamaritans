@@ -16,9 +16,9 @@ const Searchresults = props => {
     return (
       <span className="searchResultsBox">
       <Container fluid>
-        <span><h2>Search Results:</h2></span>
+        <span><h2 className="postTitle">Search Results</h2></span>
             {props.results.length ? (
-              <List>
+              <List className="resultsOuterBox">
                 {props.results.map(res => (
                   <ListItem key={res._id}>
                   <List>

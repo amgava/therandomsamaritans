@@ -120,7 +120,7 @@ export default class Searchpost extends Component {
                             </Form.Control>
                         </div>
                         <div className="formItem">
-                            <Button variant="primary"
+                            <Button variant="primary" className="searchSubmit"
                                 onClick={this.handleSearchPostsFormSubmit} >
                                 Submit Search
                             </Button>
