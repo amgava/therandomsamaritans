@@ -6,11 +6,13 @@ import "./Navbar.css";
 
 function Navbar() {
     return (
-        <ul className="nav App-navbar">
-            <HomeLink />
-            <LoggedinLink />
-            <ContactLink />
-        </ul>
+        <div className="App-navbar">
+            <ul className="nav">
+                <HomeLink />
+                <LoggedinLink />
+                <ContactLink />
+            </ul>
+        </div>
     );
 }
 
