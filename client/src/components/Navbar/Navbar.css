@@ -1,10 +1,9 @@
-  ul.App-navbar {
-    border-style: inset;
-    padding: 15px;
-    position: static;
+ .App-navbar {
+    padding: 10px;
+    position: sticky;
     background-color:#3B3E96;
-    min-height: 20vh;
-    font-size: calc(12px + 2vmin);
+    min-height: 10vh;
+    font-size: 35px;
     color: white;
     text-transform: uppercase;
     border: none;
@@ -12,10 +11,8 @@
 
   li.menuLink {
     list-style-type: none;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: inline-flex;
-    position: inherit;
+    display: inline;
+    position: sticky;
     /* font-size: calc(16px + 2vmin); */
   }
 

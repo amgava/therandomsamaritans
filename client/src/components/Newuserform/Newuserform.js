@@ -59,7 +59,6 @@ function Newuserform(props) {
           placeholder="Nearest Subway"
           id="location"
         />
-        
         <button onClick={props.handleNewUserFormSubmit} className="submitButton">
           Register
         </button>

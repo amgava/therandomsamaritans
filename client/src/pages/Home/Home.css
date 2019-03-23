@@ -3,13 +3,13 @@
 }
 
 .homepageToggleBar {
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 
 .signupform-input {
-  margin: 25px;
-  
+  margin: 35px;
+  margin-bottom: 5px;
 }
 
 .pageToggleButton {
@@ -21,18 +21,15 @@
   padding: 14px 40px;
   border: 2px solid white;
   border-radius: 12px;
-  
 }
 
 .signupSpacer {
-    width: 80%;
-    padding: 5vh;
+    padding: 3px;
     background-color: white; 
-    border-radius: 12px;
-    text-align: justify;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4vh;
+    border-radius: 15px;
+    margin: 0px;
+    display: inline-block;
+    width: 80%;
 }
 
 button.submitButton {
@@ -45,30 +42,17 @@ button.submitButton {
   border: 2px solid white;
 }
 
-.signupBody {
-    background-color: lightblue;
-    min-height: 20vh;
-    font-size: calc(5px + 2vmin);
-    color: black;
-    padding: 15vh;
-    margin: 5vh;
-    line-height: 5vh;
-  }
-
 P.alreadyMember {
  display: inline-block;
- margin: auto;
- padding-left: 20vh;
  font-size: 25px;
   }
 
 input.form-control {
-      margin-left: 15px;
       background-color:rgba(19, 203, 228,0.2);
       border: 2px solid rgb(19, 203, 228);
       padding: 15px;
       display: inline-block;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       border: none;
   }
 
