@@ -1,4 +1,19 @@
 .logocomet2{
-width: 200px;
+    width: 250px;
+    padding: 10px;
+}
+
+.fabook{
+    width: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    }
+.instagram{
+    width: 70px;
+    padding: 10px;
+    margin-right: 50px;
+}
+.twit{
+    width: 70px;
 }
 

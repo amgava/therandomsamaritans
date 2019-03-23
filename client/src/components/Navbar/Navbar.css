@@ -1,32 +1,29 @@
  .App-navbar {
-    padding: 10px;
+    padding: 25px;
     position: sticky;
     background-color:#3B3E96;
     min-height: 10vh;
-    font-size: 35px;
+    font-size: 45px;
     color: white;
     text-transform: uppercase;
-    border: none;
-  }
-
-  li.menuLink {
-    list-style-type: none;
-    display: inline;
-    position: sticky;
-    /* font-size: calc(16px + 2vmin); */
   }
 
   img.logo {
-    width: 400px;
-    /* background-color: white; */
+    width: 280px;
+    position: sticky;
+    margin: 25px;
+  }
+  
+  li.menuLink {
+    list-style-type: none;
+    margin-left: 120px;
+    margin-right: 5px;
+    display: inline;
+    position: sticky;
   }
   
   A:hover.logo { text-decoration: none; }
-
   A.menuLink { color: white }
-
   A:link.menuLink { text-decoration: none; padding: 15px;}
-
   A:active.menuLink { text-decoration: none; }
-
   A:hover.menuLink { color: violet; text-decoration: none; }
