@@ -6,12 +6,39 @@ const ViewCard = (props) => {
   return (
     <div>
       <Card>
-        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+
+        <CardImg top width="100%" src="{prop.productImg}" alt="prod-img" />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
+          <CardTitle>View Result</CardTitle>
+          <CardSubtitle>{props.productId}</CardSubtitle>
+          <CardText>
+            <ul>
+              <li>
+                <strong>Category:</strong> {props.reqcategory}
+              </li>
+              <li>
+                <strong>Location:</strong> {props.reqlocation}
+              </li>
+              <li>
+                <strong>Description:</strong> {props.description}
+              </li>
+              <li>
+                <strong>Contact Number:</strong> {props.reqcontactNo}
+              </li>
+              <li>
+                <strong>Price:</strong> {props.reqprice}
+              </li>
+              <li className="hiddenClass">
+                <strong>Expiry:</strong> {props.reqexpiryDate}
+              </li>
+              <li className="hiddenClass">
+                <strong>User ID:</strong> {props.requserId}
+              </li>
+            </ul>
+          </CardText>
+          <Button
+          onClick="/store-to-database/">Save</Button>
+          <Button>Cancel</Button>
         </CardBody>
       </Card>
     </div>
