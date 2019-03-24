@@ -1,19 +1,11 @@
-.logocomet2{
-    width: 250px;
-    padding: 10px;
+.footerImg {
+    width: 180px;
+    display: inline-flex;
+    float: left;
 }
 
-.fabook{
-    width: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    }
-.instagram{
-    width: 70px;
-    padding: 10px;
-    margin-right: 50px;
-}
-.twit{
-    width: 70px;
+.footerSocial {
+    width: 50px; 
+    display: inline-block;
 }
 

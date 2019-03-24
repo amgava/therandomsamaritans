@@ -56,7 +56,12 @@ input.form-control {
       border: none;
   }
 
-  .homeTitles {
-    display: inline;
-    color: black;
+.homeTitles {
+  display: inline;
+  color: black;
+  }
+
+.landingBar {
+  background-color: white;
+  font-size: 3vh;
   }

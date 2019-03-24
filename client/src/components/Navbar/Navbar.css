@@ -8,8 +8,16 @@
     text-transform: uppercase;
   }
 
+  .navbar-text {
+    font-size: 14px;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
   img.logo {
-    width: 280px;
+    width: 140px;
     position: sticky;
     margin: 25px;
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Newuserform from "../../components/Newuserform/Newuserform";
+import Footer from "../../components/Footer/Footer";
 import API from "../../utils/API";
 import "./Home.css";
 
@@ -75,9 +76,8 @@ export default class Home extends Component {
             <div className="wrapper">
                 <header className="App-header">
                     <div className="landingBar">
-                        <strong className="landingTitle">Sign Up Now!</strong><br />
                         <strong className="homeTitles">Already A Member?</strong><br />
-                        <Link to={'/login'}><strong>Go To Login</strong></Link>
+                        <Link to={'/'}><strong>Go To Login</strong></Link>
                     </div>
                 </header>
                 <div className="App-body">
@@ -92,6 +92,7 @@ export default class Home extends Component {
                         handleInputChange={this.handleInputChange}
                     />
                 </div>
+                <Footer />
             </div>
         )
     }
