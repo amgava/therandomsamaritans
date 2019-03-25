@@ -1,7 +1,8 @@
 .footerImg {
-    width: 180px;
+    width: 140px;
     display: inline-flex;
     float: left;
+    padding: 20px;
 }
 
 .footerSocial {

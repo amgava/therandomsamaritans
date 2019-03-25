@@ -4,11 +4,11 @@ import "./footer.css";
 
 function Footer() {
     return (
-        <nav className="navbar App-footer sticky-bottom navbar-light bg-dark">
+        <nav className="navbar App-footer sticky-bottom navbar-dark bg-dark">
             <Link to={'/'} className="nav-link"><img className="footerImg" alt="Footer Logo" src={require('./commetpink2.png')} /></Link>
-            <img className="nav-item footerSocial mx-3" alt="nav-item" src={require('./fabook.png')} />
-            <img className="nav-item footerSocial mx-3" alt="nav-item" src={require('./instagram.png')} />
-            <img className="nav-item footerSocial mx-3" alt="nav-item" src={require('./twit.png')} />
+            <img className="nav-item footerSocial mx-3 p-0" alt="nav-item" src={require('./fabook.png')} />
+            <img className="nav-item footerSocial mx-5 p-0" alt="nav-item" src={require('./instagram.png')} />
+            <img className="nav-item footerSocial mx-3 p-0" alt="nav-item" src={require('./twit.png')} />
         </nav>
     );
 }

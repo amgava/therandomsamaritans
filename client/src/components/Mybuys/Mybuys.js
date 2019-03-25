@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "../Grid";
-import { List, ListItem } from "../List";
 import "./Mybuys.css";
 const moment = require("moment");
 
@@ -14,25 +13,20 @@ const Mybuys = props => {
   console.log("this is mybuys props" + props);
   return (
     <Container className="myBuysBox m-2">
-      <span><h3 className="alert-primary p-3">Things I Am Buying</h3></span>
+    <span><h3 className="bg-info p-3">Incoming Comets</h3></span>
       {props.activebuys.length ? (
-        <List>
+        <div class="list-group">
           {props.activebuys.map(res => (
-            <ListItem key={res._id}>
-                  <List>
-                    <li>
-                      <strong className="postTitle">{res.description}</strong>
-                      </li>
-                      <li>
-                      <strong>{convertPhone(res.contactNo)}</strong>
-                      </li>                
-                      <li>
-                      <strong>Expires: {moment(res.expiryDate).format('MMMM Do YYYY')}</strong>
-                      </li>
-                      </List>
-                  </ListItem>
+            <a href="#" className="list-group-item list-group-item-action flex-column align-items-start my-2" key={res._id}>
+              <div className="d-flex w-100 justify-content-between">
+                <h5 className="mb-1 text-justify text-weight-bold">{res.description}</h5>
+              </div>
+              <small className="alert-primary p-2 m-2">Expires: {moment(res.expiryDate).format('MMMM Do YYYY')}</small>
+              <br />
+              <small className="alert-primary p-2 m-2">{convertPhone(res.contactNo)}</small>
+            </a>
           ))}
-        </List>
+        </div>
       ) : (
           <h3 className="m-2 p-2">No Results to Display</h3>
         )}
