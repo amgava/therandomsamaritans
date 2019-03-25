@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 function Footer() {
     return (
-        <div className="App-footer">
-           <strong><img className="logocomet2" alt="homelink" src={require('./commetpink2.png') } /></strong>
-           <strong><img className="fabook" alt="homelink" src={require('./fabook.png') } /></strong>
-           <strong><img className="instagram" alt="homelink" src={require('./instagram.png') } /></strong>
-           <strong><img className="twit" alt="homelink" src={require('./twit.png') } /></strong>
-           <i class="fab fa-instagram"></i>
-        </div>
+        <nav className="navbar App-footer sticky-bottom navbar-dark bg-dark">
+            <Link to={'/'} className="nav-link"><img className="footerImg" alt="Footer Logo" src={require('./commetpink2.png')} /></Link>
+            <img className="nav-item footerSocial mx-3 p-0" alt="nav-item" src={require('./fabook.png')} />
+            <img className="nav-item footerSocial mx-5 p-0" alt="nav-item" src={require('./instagram.png')} />
+            <img className="nav-item footerSocial mx-3 p-0" alt="nav-item" src={require('./twit.png')} />
+        </nav>
     );
 }
 

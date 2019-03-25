@@ -1,6 +1,5 @@
 import React from "react";
 import "../../pages/Home/Home.css";
-import Footer from "../../components/Footer/Footer";
 
 function Loginform(props) {
   return (
@@ -30,7 +29,6 @@ function Loginform(props) {
         </button>
       </div>
     </form>
-    <Footer />
     </div>
   );
 }

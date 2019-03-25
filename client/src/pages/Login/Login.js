@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Loginform from "../../components/Loginform/Loginform";
 import Landing from "../../pages/Landing/Landing";
+import Footer from "../../components/Footer/Footer";
 import API from "../../utils/API";
 import "./Login.css";
 
@@ -78,7 +79,6 @@ export default class Login extends Component {
         console.log(currUser);
         API.getUserPosts(currUser)
             .then(res => {
-                //console.log(res);
                 if (res.data.status === "error") {
                     alert("No active posts for the user");
                     throw new Error(res.data.message);
@@ -96,7 +96,6 @@ export default class Login extends Component {
         console.log(currUser);
         API.getUserBuys(currUser)
             .then(res => {
-                //console.log(res);
                 if (res.data.status === "error") {
                     alert("No active buys for the user");
                     throw new Error(res.data.message);
@@ -127,9 +126,8 @@ export default class Login extends Component {
                 <div className="wrapper">
                     <header className="App-header">
                         <div className="landingBar">
-                            <strong className="landingTitle">Welcome Back</strong><br />
                             <strong className="homeTitles">Need To Register?</strong><br />
-                            <Link to={'/'}><strong>Create Account</strong></Link>
+                            <Link to={'/signup'}><strong>Create Account</strong></Link>
                         </div>
                     </header>
                     <div className="App-body">
@@ -140,6 +138,7 @@ export default class Login extends Component {
                             handleInputChange={this.handleInputChange}
                         />
                     </div>
+                    <Footer />
                 </div>
             );
         } else {

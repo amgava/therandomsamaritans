@@ -10,22 +10,26 @@ function Landing(props) {
     console.log("this is landing props " + Object.values(props));
     if (props.currentuser !== "") {
         return (<div className="wrapper">
-            <header className="App-header">
-                <div className="landingBar">
-                </div>
-            </header>
             <div className="App-body">
                 <div className="landingBody">
-                    <strong className="landingTitle">Welcome To Comet!</strong>
-                    <br /> <br />
                     <div className="landingChoice">
-                        <Link to={`/searchpost/${props.currentuser}`}>Search Items</Link>
-                        <strong>   Choose what to do first   </strong>
-                        <Link to={`/makepost/${props.currentuser}`}>Create Post</Link>
+                        <strong className="landingTitle">Welcome To Comet!</strong>
+                        <br /><br />
+                        <Link className="landingBar" to={`/searchpost/${props.currentuser}`}>Search Items</Link>
+                        <strong className="landingBar">   Choose what to do first   </strong>
+                        <Link className="landingBar" to={`/makepost/${props.currentuser}`}>Create Post</Link>
+                    </div>
+                    <div class="container">
+                        <div className="row">
+                            <div className="col-sm">
+                            <Myposts activeposts={props.activeposts} />
+                            </div>
+                            <div className="col-sm">
+                            <Mybuys activebuys={props.activebuys} />
+                            </div>
+                        </div>
                     </div>
                     <div className="landingInfo">
-                        <Myposts activeposts={props.activeposts} />
-                        <Mybuys activebuys={props.activebuys} />
                     </div>
                 </div>
             </div>

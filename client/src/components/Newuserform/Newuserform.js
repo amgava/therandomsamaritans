@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/Footer/Footer";
 import "../../pages/Home/Home.css";
 
 
@@ -67,7 +66,6 @@ function Newuserform(props) {
         </button>
       </div>
     </form>
-    <Footer />
     </div>
   );
 }

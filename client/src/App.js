@@ -14,8 +14,8 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
+        <Route exact path="/" component={Login} />
+        <Route path="/signup" component={Home} />
         <Route path="/landing" component={Landing} />
         <Route path="/makepost" component={Makepost} />
         <Route path="/searchpost" component={Searchpost} />
